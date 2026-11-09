@@ -1,0 +1,6 @@
+# Разрешаем индексацию всего сайта
+User-agent: *
+Allow: /
+
+Host: https://jac-aster.uz
+Sitemap: https://jac-aster.uz/sitemap.xml
