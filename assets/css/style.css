@@ -284,6 +284,15 @@ body:not(.is-loading) .preloader { opacity: 0; visibility: hidden; }
 .stage__car img.is-entering { opacity: 0; transform: translateX(10%) scale(.97); filter: blur(4px); }
 .stage__label { position: absolute; left: 16px; top: 14px; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #7A8A92; }
 .stage__label b { display: block; margin-top: 2px; font-size: 16px; letter-spacing: .02em; text-transform: none; color: #1C1C1B; }
+/* мобильная версия: машина крупнее (в картинках есть поля под тень), подсказка 360° не залезает на кузов */
+@media (max-width: 639px) {
+  .stage { padding: 58px 0 16px; }
+  .stage__car { aspect-ratio: 16 / 7.6; }
+  .stage__car img { width: 118%; max-width: none; max-height: none; height: auto; }
+  .stage--spin .stage__car { margin-bottom: 30px; }
+  .spin__hint { bottom: -34px; }
+  .stage--spin .stage__floor { bottom: calc(20% + 30px); }
+}
 .swatches { position: relative; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 10px; }
 .swatch { width: 38px; height: 38px; border-radius: 50%; padding: 4px; box-shadow: inset 0 0 0 1.5px rgba(0,0,0,.12); transition: box-shadow .3s, transform .3s var(--ease); }
 .swatch i { display: block; width: 100%; height: 100%; border-radius: 50%; background: var(--c); box-shadow: inset 0 0 0 1px rgba(0,0,0,.12), inset 0 -6px 10px rgba(0,0,0,.25), inset 0 4px 8px rgba(255,255,255,.3); }

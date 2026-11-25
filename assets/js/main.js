@@ -287,7 +287,9 @@
   function spinLoad(sp, idx, cb) {
     var url = sp.model.colors[idx].sprite, img = new Image();
     sp.el.classList.remove('is-ready');
+    sp.want = idx; // последний выбранный цвет: устаревшие загрузки игнорируем
     img.onload = function () {
+      if (sp.want !== idx) return;
       sp.el.style.backgroundImage = 'url("' + url + '")';
       sp.el.style.backgroundSize = (sp.cfg.cols * 100) + '% ' + (sp.cfg.rows * 100) + '%';
       spinFrame(sp, sp.frame); sp.el.classList.add('is-ready'); if (cb) cb();
