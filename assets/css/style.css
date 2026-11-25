@@ -203,6 +203,12 @@ body:not(.is-loading) .preloader { opacity: 0; visibility: hidden; }
 .hero--home .hero__media img { object-position: 55% 50%; }
 @media (min-width: 801px) { .hero--home .hero__media img { object-position: 50% 55%; } }
 .hero--model { height: 78svh; min-height: 520px; max-height: 880px; }
+/* Телефон: вертикальное фото модели — машина целиком, без сильного приближения */
+@media (max-width: 800px) {
+  .hero.hero--model { height: min(100svh, 172vw); max-height: none; }
+  .hero--model .hero__media img { object-position: 50% 40%; animation-name: heroZoomSoft; }
+}
+@keyframes heroZoomSoft { from { transform: scale(1.06); } to { transform: scale(1); } }
 .hero__sub { display: block; margin-top: 14px; font-size: clamp(17px, 4.4vw, 26px); font-weight: 300; letter-spacing: 0; text-transform: none; color: #DDE8EC; animation: heroTitle 1.3s var(--ease-out) .75s both; }
 .model-cards--others { grid-template-columns: 1fr; }
 .hero__line { display: block; animation: heroTitle 1.3s var(--ease-out) .5s both; }
