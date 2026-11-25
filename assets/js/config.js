@@ -127,7 +127,7 @@ window.MODELS = [
 
     /* У JS8 вместо фото — 3D-вращение 360°.
        spin — спрайт из кадров (сетка cols × rows). img — статичный кадр (запасной вариант). */
-    spin: { cols: 7, rows: 7, frames: 49, frameW: 533, frameH: 237 },
+    spin: { cols: 7, rows: 7, frames: 49, frameW: 533, frameH: 237, startFrame: 10 },  // startFrame — ракурс 3/4 спереди справа
     colors: [
       { name: { ru: 'Чёрный', uz: 'Qora' },  hex: '#141414', img: 'assets/img/js8/c-black.webp', sprite: 'assets/img/js8/360-black.webp' },
       { name: { ru: 'Белый', uz: 'Oq' },     hex: '#f2f2f2', img: 'assets/img/js8/c-white.webp', sprite: 'assets/img/js8/360-white.webp' },

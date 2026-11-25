@@ -271,7 +271,13 @@ body:not(.is-loading) .preloader { opacity: 0; visibility: hidden; }
 .stage { position: relative; border-radius: var(--radius); padding: 64px 12px 20px; color: #1C1C1B;
   background: radial-gradient(80% 70% at 50% 55%, #FFFFFF 0%, #F4F7F9 60%, #E9EEF1 100%);
   box-shadow: 0 24px 60px -24px rgba(0,0,0,.6); overflow: hidden; }
-.stage__floor { position: absolute; left: 14%; right: 14%; bottom: 21%; height: 18px; border-radius: 50%; background: radial-gradient(closest-side, rgba(0,0,0,.18), transparent); filter: blur(6px); }
+/* Тень под машиной: у фото без фона (c-*.webp) тень уже «вшита» в картинку,
+   CSS-тень нужна только для 360° (JS8) */
+.stage__floor { display: none; }
+.stage--spin .stage__floor { display: block; position: absolute; left: 16%; right: 16%; bottom: 20%; height: 26px; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(10,14,18,.55), rgba(10,14,18,.18) 60%, transparent); filter: blur(7px); }
+.stage--spin .stage__floor::after { content: ''; position: absolute; left: -12%; right: -12%; top: -10px; bottom: -14px; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(10,14,18,.14), transparent); filter: blur(10px); }
 .stage__car { position: relative; aspect-ratio: 16 / 7; display: grid; place-items: center; }
 .stage__car img { position: absolute; width: 96%; max-height: 100%; object-fit: contain; transition: opacity .6s var(--ease), transform .8s var(--ease-out), filter .6s; }
 .stage__car img.is-leaving { opacity: 0; transform: translateX(-8%) scale(.97); filter: blur(4px); }

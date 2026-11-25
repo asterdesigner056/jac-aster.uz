@@ -206,7 +206,7 @@
       $('[data-model-body]', section).innerHTML = '' +
         '<div class="model__layout">' +
           '<div class="model__stage-col reveal">' +
-            '<div class="stage" data-stage="' + m.id + '">' +
+            '<div class="stage' + (m.spin ? ' stage--spin' : '') + '" data-stage="' + m.id + '">' +
               '<p class="stage__label">' + bk('model.colors') + '<b data-color-name data-ru="' + esc(c0.name.ru) + '" data-uz="' + esc(c0.name.uz) + '">' + esc(tx(c0.name)) + '</b></p>' +
               '<div class="stage__floor" aria-hidden="true"></div>' +
               '<div class="stage__car">' + stageInner + '</div>' +
@@ -300,18 +300,20 @@
   function initSpins() {
     $$('[data-spin]').forEach(function (el) {
       var id = el.getAttribute('data-spin'), m = getModel(id);
-      var sp = spins[id] = { el: el, model: m, cfg: m.spin, frame: 0, loaded: false, auto: !reduceMotion, raf: 0 };
+      var start = m.spin.startFrame || 0; // кадр, с которого начинается показ (ракурс 3/4 спереди справа)
+      var sp = spins[id] = { el: el, model: m, cfg: m.spin, frame: start, loaded: false, auto: !reduceMotion, raf: 0 };
       var startX = 0, startF = 0, dragging = false, lastX = 0, vel = 0, lastT = 0;
       var PX_PER_FRAME = 9; // чувствительность: меньше — быстрее вращение
 
       function load() { if (sp.loaded) return; sp.loaded = true; spinLoad(sp, 0, autoRotate); }
       function autoRotate() {
-        // плавное вращение, пока пользователь не коснулся
-        var acc = 0, prev = performance.now();
+        // один плавный оборот на 360° и остановка в исходном ракурсе
+        var acc = 0, prev = performance.now(), done = 0;
         function tick(now) {
           if (!sp.auto) return;
           acc += (now - prev) / 110; prev = now;
-          if (acc >= 1) { spinFrame(sp, sp.frame + Math.floor(acc)); acc = acc % 1; }
+          if (acc >= 1) { var n = Math.floor(acc); done += n; spinFrame(sp, sp.frame + n); acc = acc % 1; }
+          if (done >= sp.cfg.frames) { spinFrame(sp, start); sp.auto = false; return; }
           sp.raf = requestAnimationFrame(tick);
         }
         if (sp.auto) sp.raf = requestAnimationFrame(tick);
