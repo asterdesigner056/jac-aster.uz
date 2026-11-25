@@ -44,8 +44,8 @@
   <!-- Предзагрузка шрифта и главного фото для скорости -->
   <link rel="preload" href="assets/fonts/roboto-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/roboto-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="assets/img/js8/a1-m.webp" media="(max-width: 800px)">
-  <link rel="preload" as="image" href="assets/img/js8/a1.webp" media="(min-width: 801px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/js8/a1-m.webp?v=2" media="(max-width: 800px)">
+  <link rel="preload" as="image" href="assets/img/js8/a1.webp?v=2" media="(min-width: 801px)" fetchpriority="high">
 
   <link rel="stylesheet" href="assets/css/style.css">
 
@@ -79,7 +79,6 @@
       <nav class="nav" id="nav" data-i18n-attr="aria-label:nav.main" aria-label="Основное меню">
         <ul class="nav__list">
           <li><a href="index.html#models" data-i18n="nav.models">Модели</a></li>
-          <li><a href="index.html#testdrive" data-i18n="nav.testdrive">Тест-драйв</a></li>
           <li><a href="index.html#contacts" data-i18n="nav.contacts">Контакты</a></li>
         </ul>
         <div class="nav__mobile-extra">
@@ -111,8 +110,8 @@
     <section class="hero hero--model" id="top" aria-labelledby="hero-title">
       <div class="hero__media">
         <picture>
-          <source media="(max-width: 800px)" srcset="assets/img/js8/a1-m.webp">
-          <img src="assets/img/js8/a1.webp" alt="Кроссовер JAC JS8 на горном серпантине" data-i18n-attr="alt:page.js8.alt" width="1672" height="941" style="object-position:50% 60%" fetchpriority="high" decoding="async">
+          <source media="(max-width: 800px)" srcset="assets/img/js8/a1-m.webp?v=2">
+          <img src="assets/img/js8/a1.webp?v=2" alt="Кроссовер JAC JS8 на горном серпантине" data-i18n-attr="alt:page.js8.alt" width="1672" height="941" style="object-position:50% 60%" fetchpriority="high" decoding="async">
         </picture>
       </div>
       <div class="hero__content container">
@@ -150,7 +149,7 @@
     <!-- ===================== ТЕСТ-ДРАЙВ / ФОРМА ЗАЯВКИ ===================== -->
     <section class="section lead-section" id="testdrive" aria-labelledby="form-title">
       <div class="lead-section__bg" aria-hidden="true">
-        <img src="assets/img/t8/a3-800.webp" srcset="assets/img/t8/a3-800.webp 800w, assets/img/t8/a3.webp 1672w" sizes="100vw" alt="" loading="lazy" decoding="async" width="1672" height="941">
+        <img src="assets/img/t8/a3-800.webp?v=2" srcset="assets/img/t8/a3-800.webp?v=2 800w, assets/img/t8/a3.webp?v=2 1672w" sizes="100vw" alt="" loading="lazy" decoding="async" width="1672" height="941">
       </div>
       <div class="container lead-section__grid">
         <header class="lead-section__head reveal">
@@ -230,7 +229,7 @@
       <button type="button" class="modal__close" data-close data-i18n-attr="aria-label:nav.close" aria-label="Закрыть">
         <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
       </button>
-      <div class="modal__media" aria-hidden="true"><img id="modalImg" src="assets/img/js8/c-black.webp" alt="" width="1182" height="430"></div>
+      <div class="modal__media" aria-hidden="true"><img id="modalImg" src="assets/img/js8/c-black.webp?v=2" alt="" width="1182" height="430"></div>
       <h2 class="modal__title" id="modal-title" data-i18n="form.modal.title">Забронировать</h2>
       <p class="modal__lead" data-i18n="form.modal.lead">Оставьте контакты — зафиксируем автомобиль и цену за вами.</p>
       <div id="modalFormHost"></div>

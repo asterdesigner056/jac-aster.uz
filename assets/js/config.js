@@ -11,7 +11,7 @@
    ПРАВИЛА:
    • Тексты на двух языках пишутся так:  { ru: 'Текст', uz: 'Matn' }
    • Цены пишутся числом БЕЗ пробелов:   444675000
-   • Пути к фото — относительно корня сайта: 'assets/img/t8/a1.webp'
+   • Пути к фото — относительно корня сайта: 'assets/img/t8/a1.webp?v=2'
    • После правок просто обновите страницу (Ctrl+F5).
    ========================================================================== */
 
@@ -125,27 +125,27 @@ window.MODELS = [
       ]}
     ],
 
-    /* У JS8 вместо фото — 3D-вращение 360°.
-       spin — спрайт из кадров (сетка cols × rows). img — статичный кадр (запасной вариант). */
-    spin: { cols: 7, rows: 7, frames: 49, frameW: 533, frameH: 237, startFrame: 10 },  // startFrame — ракурс 3/4 спереди справа
+    /* spin — 3D-вращение 360° из спрайта (cols × rows кадров). Сейчас выключено:
+       чтобы включить снова: spin: { cols: 7, rows: 7, frames: 49, frameW: 533, frameH: 237, startFrame: 10 } */
+    spin: null,  // 360° отключено: в блоке цвета статичные фото c-*.webp (спрайты 360-*.webp оставлены в папке)
     colors: [
-      { name: { ru: 'Чёрный', uz: 'Qora' },  hex: '#141414', img: 'assets/img/js8/c-black.webp', sprite: 'assets/img/js8/360-black.webp' },
-      { name: { ru: 'Белый', uz: 'Oq' },     hex: '#f2f2f2', img: 'assets/img/js8/c-white.webp', sprite: 'assets/img/js8/360-white.webp' },
-      { name: { ru: 'Красный', uz: 'Qizil' }, hex: '#a3141d', img: 'assets/img/js8/c-red.webp',   sprite: 'assets/img/js8/360-red.webp' }
+      { name: { ru: 'Чёрный', uz: 'Qora' },  hex: '#141414', img: 'assets/img/js8/c-black.webp?v=2', sprite: 'assets/img/js8/360-black.webp?v=2' },
+      { name: { ru: 'Белый', uz: 'Oq' },     hex: '#f2f2f2', img: 'assets/img/js8/c-white.webp?v=2', sprite: 'assets/img/js8/360-white.webp?v=2' },
+      { name: { ru: 'Красный', uz: 'Qizil' }, hex: '#a3141d', img: 'assets/img/js8/c-red.webp?v=2',   sprite: 'assets/img/js8/360-red.webp?v=2' }
     ],
 
     /* --- ФОТОГРАФИИ ---
        hero — главное фото страницы модели (оно же прописано в js8.html).
        card — фото в карточке «Модельный ряд». cardPos — какую часть фото показывать (X% Y%) */
-    hero: { src: 'assets/img/js8/a1.webp', srcMobile: 'assets/img/js8/a1-m.webp', pos: '50% 60%' },
-    card: 'assets/img/js8/a1.webp', cardPos: '50% 60%',
+    hero: { src: 'assets/img/js8/a1.webp?v=2', srcMobile: 'assets/img/js8/a1-m.webp?v=2', pos: '50% 60%' },
+    card: 'assets/img/js8/a1.webp?v=2', cardPos: '50% 60%',
     gallery: [
-      { src: 'assets/img/js8/a1.webp', thumb: 'assets/img/js8/a1-800.webp', alt: { ru: 'JAC JS8 на горном серпантине', uz: 'Togʻ serpantinidagi JAC JS8' } },
-      { src: 'assets/img/js8/a2.webp', thumb: 'assets/img/js8/a2-800.webp', alt: { ru: 'JAC JS8 на грунтовой дороге', uz: 'Tuproq yoʻldagi JAC JS8' } },
-      { src: 'assets/img/js8/a3.webp', thumb: 'assets/img/js8/a3-800.webp', alt: { ru: 'JAC JS8 в ночном городе', uz: 'Tungi shahardagi JAC JS8' } },
-      { src: 'assets/img/js8/i1.webp', thumb: 'assets/img/js8/i1-800.webp', alt: { ru: 'Место водителя JAC JS8', uz: 'JAC JS8 haydovchi oʻrni' } },
-      { src: 'assets/img/js8/i2.webp', thumb: 'assets/img/js8/i2-800.webp', alt: { ru: 'Второй ряд JAC JS8', uz: 'JAC JS8 ikkinchi qatori' } },
-      { src: 'assets/img/js8/roof.webp', thumb: 'assets/img/js8/roof-800.webp', alt: { ru: 'Панорамная крыша JAC JS8', uz: 'JAC JS8 panoramali tomi' } }
+      { src: 'assets/img/js8/a1.webp?v=2', thumb: 'assets/img/js8/a1-800.webp?v=2', alt: { ru: 'JAC JS8 на горном серпантине', uz: 'Togʻ serpantinidagi JAC JS8' } },
+      { src: 'assets/img/js8/a2.webp?v=2', thumb: 'assets/img/js8/a2-800.webp?v=2', alt: { ru: 'JAC JS8 на грунтовой дороге', uz: 'Tuproq yoʻldagi JAC JS8' } },
+      { src: 'assets/img/js8/a3.webp?v=2', thumb: 'assets/img/js8/a3-800.webp?v=2', alt: { ru: 'JAC JS8 в ночном городе', uz: 'Tungi shahardagi JAC JS8' } },
+      { src: 'assets/img/js8/i1.webp?v=2', thumb: 'assets/img/js8/i1-800.webp?v=2', alt: { ru: 'Место водителя JAC JS8', uz: 'JAC JS8 haydovchi oʻrni' } },
+      { src: 'assets/img/js8/i2.webp?v=2', thumb: 'assets/img/js8/i2-800.webp?v=2', alt: { ru: 'Второй ряд JAC JS8', uz: 'JAC JS8 ikkinchi qatori' } },
+      { src: 'assets/img/js8/roof.webp?v=2', thumb: 'assets/img/js8/roof-800.webp?v=2', alt: { ru: 'Панорамная крыша JAC JS8', uz: 'JAC JS8 panoramali tomi' } }
     ]
   },
 
@@ -204,17 +204,17 @@ window.MODELS = [
        img — фото автомобиля без фона (WebP с прозрачностью), hex — цвет кружка.
        Чтобы добавить цвет — добавьте строку с новым фото. */
     colors: [
-      { name: { ru: 'Чёрный', uz: 'Qora' }, hex: '#16181a', img: 'assets/img/t8/c-black.webp' }
+      { name: { ru: 'Чёрный', uz: 'Qora' }, hex: '#16181a', img: 'assets/img/t8/c-black.webp?v=2' }
     ],
 
-    hero: { src: 'assets/img/t8/a1.webp', srcMobile: 'assets/img/t8/a1-m.webp', pos: '55% 55%' },
-    card: 'assets/img/t8/a1.webp', cardPos: '55% 55%',
+    hero: { src: 'assets/img/t8/a1.webp?v=2', srcMobile: 'assets/img/t8/a1-m.webp?v=2', pos: '55% 55%' },
+    card: 'assets/img/t8/a1.webp?v=2', cardPos: '55% 55%',
     gallery: [
-      { src: 'assets/img/t8/a1.webp', thumb: 'assets/img/t8/a1-800.webp', alt: { ru: 'JAC T8 преодолевает горную реку', uz: 'JAC T8 togʻ daryosidan oʻtmoqda' } },
-      { src: 'assets/img/t8/a2.webp', thumb: 'assets/img/t8/a2-800.webp', alt: { ru: 'JAC T8 в прыжке на дюнах', uz: 'Qum barxanlarida sakrayotgan JAC T8' } },
-      { src: 'assets/img/t8/a3.webp', thumb: 'assets/img/t8/a3-800.webp', alt: { ru: 'JAC T8 на горной дороге', uz: 'Togʻ yoʻlidagi JAC T8' } },
-      { src: 'assets/img/t8/i1.webp', thumb: 'assets/img/t8/i1-800.webp', alt: { ru: 'Место водителя JAC T8', uz: 'JAC T8 haydovchi oʻrni' } },
-      { src: 'assets/img/t8/i2.webp', thumb: 'assets/img/t8/i2-800.webp', alt: { ru: 'Задний ряд JAC T8', uz: 'JAC T8 orqa qatori' } }
+      { src: 'assets/img/t8/a1.webp?v=2', thumb: 'assets/img/t8/a1-800.webp?v=2', alt: { ru: 'JAC T8 преодолевает горную реку', uz: 'JAC T8 togʻ daryosidan oʻtmoqda' } },
+      { src: 'assets/img/t8/a2.webp?v=2', thumb: 'assets/img/t8/a2-800.webp?v=2', alt: { ru: 'JAC T8 в прыжке на дюнах', uz: 'Qum barxanlarida sakrayotgan JAC T8' } },
+      { src: 'assets/img/t8/a3.webp?v=2', thumb: 'assets/img/t8/a3-800.webp?v=2', alt: { ru: 'JAC T8 на горной дороге', uz: 'Togʻ yoʻlidagi JAC T8' } },
+      { src: 'assets/img/t8/i1.webp?v=2', thumb: 'assets/img/t8/i1-800.webp?v=2', alt: { ru: 'Место водителя JAC T8', uz: 'JAC T8 haydovchi oʻrni' } },
+      { src: 'assets/img/t8/i2.webp?v=2', thumb: 'assets/img/t8/i2-800.webp?v=2', alt: { ru: 'Задний ряд JAC T8', uz: 'JAC T8 orqa qatori' } }
     ]
   },
 
@@ -265,17 +265,17 @@ window.MODELS = [
     ],
 
     colors: [
-      { name: { ru: 'Белый', uz: 'Oq' }, hex: '#f3f4f4', img: 'assets/img/m4/c-white.webp' }
+      { name: { ru: 'Белый', uz: 'Oq' }, hex: '#f3f4f4', img: 'assets/img/m4/c-white.webp?v=2' }
     ],
 
-    hero: { src: 'assets/img/m4/a1.webp', srcMobile: 'assets/img/m4/a1-m.webp', pos: '50% 60%' },
-    card: 'assets/img/m4/a1.webp', cardPos: '50% 62%',
+    hero: { src: 'assets/img/m4/a1.webp?v=2', srcMobile: 'assets/img/m4/a1-m.webp?v=2', pos: '50% 60%' },
+    card: 'assets/img/m4/a1.webp?v=2', cardPos: '50% 62%',
     gallery: [
-      { src: 'assets/img/m4/a1.webp', thumb: 'assets/img/m4/a1-800.webp', alt: { ru: 'JAC M4 у бизнес-центра', uz: 'Biznes-markaz oldidagi JAC M4' } },
-      { src: 'assets/img/m4/a2.webp', thumb: 'assets/img/m4/a2-800.webp', alt: { ru: 'Трансфер из аэропорта на JAC M4', uz: 'Aeroportdan JAC M4 da transfer' } },
-      { src: 'assets/img/m4/a3.webp', thumb: 'assets/img/m4/a3-800.webp', alt: { ru: 'JAC M4 на трассе', uz: 'Trassadagi JAC M4' } },
-      { src: 'assets/img/m4/i1.webp', thumb: 'assets/img/m4/i1-800.webp', alt: { ru: 'Место водителя JAC M4', uz: 'JAC M4 haydovchi oʻrni' } },
-      { src: 'assets/img/m4/i2.webp', thumb: 'assets/img/m4/i2-800.webp', alt: { ru: 'Пассажирский салон JAC M4', uz: 'JAC M4 yoʻlovchi saloni' } }
+      { src: 'assets/img/m4/a1.webp?v=2', thumb: 'assets/img/m4/a1-800.webp?v=2', alt: { ru: 'JAC M4 у бизнес-центра', uz: 'Biznes-markaz oldidagi JAC M4' } },
+      { src: 'assets/img/m4/a2.webp?v=2', thumb: 'assets/img/m4/a2-800.webp?v=2', alt: { ru: 'Трансфер из аэропорта на JAC M4', uz: 'Aeroportdan JAC M4 da transfer' } },
+      { src: 'assets/img/m4/a3.webp?v=2', thumb: 'assets/img/m4/a3-800.webp?v=2', alt: { ru: 'JAC M4 на трассе', uz: 'Trassadagi JAC M4' } },
+      { src: 'assets/img/m4/i1.webp?v=2', thumb: 'assets/img/m4/i1-800.webp?v=2', alt: { ru: 'Место водителя JAC M4', uz: 'JAC M4 haydovchi oʻrni' } },
+      { src: 'assets/img/m4/i2.webp?v=2', thumb: 'assets/img/m4/i2-800.webp?v=2', alt: { ru: 'Пассажирский салон JAC M4', uz: 'JAC M4 yoʻlovchi saloni' } }
     ]
   },
 
@@ -330,17 +330,17 @@ window.MODELS = [
     ],
 
     colors: [
-      { name: { ru: 'Белый', uz: 'Oq' }, hex: '#f3f4f4', img: 'assets/img/m3/c-white.webp' }
+      { name: { ru: 'Белый', uz: 'Oq' }, hex: '#f3f4f4', img: 'assets/img/m3/c-white.webp?v=2' }
     ],
 
-    hero: { src: 'assets/img/m3/a1.webp', srcMobile: 'assets/img/m3/a1-m.webp', pos: '55% 60%' },
-    card: 'assets/img/m3/a1.webp', cardPos: '60% 62%',
+    hero: { src: 'assets/img/m3/a1.webp?v=2', srcMobile: 'assets/img/m3/a1-m.webp?v=2', pos: '55% 60%' },
+    card: 'assets/img/m3/a1.webp?v=2', cardPos: '60% 62%',
     gallery: [
-      { src: 'assets/img/m3/a1.webp', thumb: 'assets/img/m3/a1-800.webp', alt: { ru: 'Водитель встречает гостя у JAC M3', uz: 'Haydovchi JAC M3 yonida mehmonni kutib olmoqda' } },
-      { src: 'assets/img/m3/a2.webp', thumb: 'assets/img/m3/a2-800.webp', alt: { ru: 'JAC M3 у бизнес-центра вечером', uz: 'Kechqurun biznes-markaz oldidagi JAC M3' } },
-      { src: 'assets/img/m3/a3.webp', thumb: 'assets/img/m3/a3-800.webp', alt: { ru: 'JAC M3 в городе', uz: 'Shahardagi JAC M3' } },
-      { src: 'assets/img/m3/i1.webp', thumb: 'assets/img/m3/i1-800.webp', alt: { ru: 'Место водителя JAC M3', uz: 'JAC M3 haydovchi oʻrni' } },
-      { src: 'assets/img/m3/i2.webp', thumb: 'assets/img/m3/i2-800.webp', alt: { ru: 'Пассажирский салон JAC M3', uz: 'JAC M3 yoʻlovchi saloni' } }
+      { src: 'assets/img/m3/a1.webp?v=2', thumb: 'assets/img/m3/a1-800.webp?v=2', alt: { ru: 'Водитель встречает гостя у JAC M3', uz: 'Haydovchi JAC M3 yonida mehmonni kutib olmoqda' } },
+      { src: 'assets/img/m3/a2.webp?v=2', thumb: 'assets/img/m3/a2-800.webp?v=2', alt: { ru: 'JAC M3 у бизнес-центра вечером', uz: 'Kechqurun biznes-markaz oldidagi JAC M3' } },
+      { src: 'assets/img/m3/a3.webp?v=2', thumb: 'assets/img/m3/a3-800.webp?v=2', alt: { ru: 'JAC M3 в городе', uz: 'Shahardagi JAC M3' } },
+      { src: 'assets/img/m3/i1.webp?v=2', thumb: 'assets/img/m3/i1-800.webp?v=2', alt: { ru: 'Место водителя JAC M3', uz: 'JAC M3 haydovchi oʻrni' } },
+      { src: 'assets/img/m3/i2.webp?v=2', thumb: 'assets/img/m3/i2-800.webp?v=2', alt: { ru: 'Пассажирский салон JAC M3', uz: 'JAC M3 yoʻlovchi saloni' } }
     ]
   }
 ];
