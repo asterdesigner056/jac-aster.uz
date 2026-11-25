@@ -313,6 +313,7 @@ body:not(.is-loading) .preloader { opacity: 0; visibility: hidden; }
 .price-box__old { font-size: 18px; color: rgba(255,255,255,.75); text-decoration: line-through; text-decoration-thickness: 1.5px; }
 .price-box__new { display: block; margin-top: 2px; font-size: clamp(30px, 8vw, 40px); font-weight: 900; line-height: 1.05; letter-spacing: -.01em; }
 .price-box__new small { font-size: .5em; font-weight: 600; }
+.price-box__new--request { font-size: clamp(24px, 6vw, 30px); }
 .price-box__badge { display: inline-block; margin-top: 8px; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; background: #fff; color: var(--blue-deep); }
 .price-box__save { display: inline-block; margin-left: 6px; font-size: 13px; font-weight: 600; color: #BDF3FF; }
 .price-box__actions { position: relative; z-index: 1; display: grid; gap: 10px; margin-top: 20px; }
@@ -574,8 +575,6 @@ dialog::backdrop { background: rgba(2, 8, 10, .7); -webkit-backdrop-filter: blur
 @media (min-width: 640px) {
   :root { --gutter: 28px; }
   .model-cards { grid-template-columns: repeat(2, 1fr); }
-  .model-cards .model-card:first-child { grid-column: span 2; }
-  .model-cards .model-card:first-child .model-card__img { aspect-ratio: 16 / 9; }
   .model-cards--others { grid-template-columns: repeat(2, 1fr); }
   .model-cards--others .model-card:first-child { grid-column: auto; }
   .model-cards--others .model-card:first-child .model-card__img { aspect-ratio: 4 / 3; }
@@ -626,10 +625,8 @@ dialog::backdrop { background: rgba(2, 8, 10, .7); -webkit-backdrop-filter: blur
   .nav__list a:hover, .nav__list a.is-active { color: #fff; }
 
 
-  .model-cards { grid-template-columns: repeat(3, 1fr); }
-  .model-cards .model-card:first-child { grid-column: auto; }
-  .model-cards .model-card:first-child .model-card__img { aspect-ratio: 4 / 3; }
-  .model-cards--others { grid-template-columns: repeat(2, 1fr); }
+  .model-cards { grid-template-columns: repeat(4, 1fr); }
+  .model-cards--others { grid-template-columns: repeat(3, 1fr); }
 
 
   .model__layout { grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 32px 40px; align-items: start; }

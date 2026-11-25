@@ -11,7 +11,7 @@
    ПРАВИЛА:
    • Тексты на двух языках пишутся так:  { ru: 'Текст', uz: 'Matn' }
    • Цены пишутся числом БЕЗ пробелов:   444675000
-   • Пути к фото — относительно корня сайта: 'assets/img/t9/a1.webp'
+   • Пути к фото — относительно корня сайта: 'assets/img/t8/a1.webp'
    • После правок просто обновите страницу (Ctrl+F5).
    ========================================================================== */
 
@@ -55,178 +55,12 @@ window.SITE = {
 /* ==========================================================================
    МОДЕЛИ
    --------------------------------------------------------------------------
-   Порядок в массиве = порядок на сайте (в слайдере, карточках, прайсе).
-   id       — короткий код (используется в ссылках #t9, #rf8, #js8)
+   Порядок в массиве = порядок карточек на сайте.
+   id       — короткий код = имя страницы модели (js8.html, t8.html, m4.html, m3.html)
    apiModel — что уйдёт в CRM в поле "model"
    ========================================================================== */
 
 window.MODELS = [
-  /* ======================= JAC T9 ======================= */
-  {
-    id: 't9',
-    name: 'JAC T9',
-    apiModel: 'T9',
-    bodyType: { ru: 'Пикап 4×4', uz: 'Pikap 4×4' },
-    slogan:   { ru: 'Покоряет любые дороги', uz: 'Har qanday yoʻlni zabt etadi' },
-
-    /* --- ЦЕНЫ И КОМПЛЕКТАЦИИ ---
-       retail  — розничная цена (сум)
-       special — спец. цена (сум), только при прямой покупке. Если нет — поставьте null */
-    trims: [
-      {
-        name: 'Luxury 4×4',
-        retail: 452800000,
-        special: 419265000,
-        note: { ru: '5 мест · 2.0T 252 л.с. · 8АКПП · полный привод', uz: '5 oʻrindiq · 2.0T 252 o.k. · 8AT · toʻliq yuritma' }
-      }
-    ],
-
-    // Цифры-акценты под заголовком модели (анимируются при прокрутке)
-    stats: [
-      { value: 252, unit: { ru: 'л.с.', uz: 'o.k.' }, label: { ru: 'мощность', uz: 'quvvat' } },
-      { value: 8,   unit: { ru: 'АКПП', uz: 'AT' },   label: { ru: 'ступеней', uz: 'pogʻona' } },
-      { value: 230, unit: { ru: 'мм', uz: 'mm' },     label: { ru: 'клиренс', uz: 'yoʻl tirqishi' } },
-      { value: 4,   unit: { ru: '×4', uz: '×4' },     label: { ru: 'полный привод', uz: 'toʻliq yuritma' }, prefix: '' }
-    ],
-
-    // Ключевое оснащение (иконки ставятся автоматически по порядку)
-    features: [
-      { ru: 'Мультимедиа 10,4″ с Apple CarPlay и Android Auto', uz: 'Apple CarPlay va Android Auto bilan 10,4″ multimedia' },
-      { ru: 'Полный привод 4×4 и клиренс 230 мм', uz: '4×4 toʻliq yuritma va 230 mm yoʻl tirqishi' },
-      { ru: 'Грузовая платформа 1520×1590×470 мм', uz: '1520×1590×470 mm yuk platformasi' },
-      { ru: 'Bluetooth и аудиосистема с 6 динамиками', uz: 'Bluetooth va 6 karnayli audiotizim' },
-      { ru: 'Шины 265/60 R18', uz: '265/60 R18 shinalar' },
-      { ru: '8-ступенчатая автоматическая коробка', uz: '8 pogʻonali avtomat uzatmalar qutisi' }
-    ],
-
-    // Характеристики (таблица). Можно добавлять/удалять строки.
-    specs: [
-      { group: { ru: 'Двигатель и трансмиссия', uz: 'Dvigatel va transmissiya' }, rows: [
-        [{ ru: 'Двигатель', uz: 'Dvigatel' }, { ru: '2.0 л, бензин, турбо', uz: '2.0 l, benzin, turbo' }],
-        [{ ru: 'Мощность', uz: 'Quvvat' }, { ru: '252 л.с.', uz: '252 o.k.' }],
-        [{ ru: 'Коробка передач', uz: 'Uzatmalar qutisi' }, { ru: '8-ступенчатая АКПП', uz: '8 pogʻonali avtomat' }],
-        [{ ru: 'Привод', uz: 'Yuritma' }, { ru: 'Полный 4×4', uz: 'Toʻliq 4×4' }],
-        [{ ru: 'Топливный бак', uz: 'Yonilgʻi baki' }, { ru: '76 л', uz: '76 l' }]
-      ]},
-      { group: { ru: 'Кузов и габариты', uz: 'Kuzov va oʻlchamlar' }, rows: [
-        [{ ru: 'Тип кузова', uz: 'Kuzov turi' }, { ru: 'Пикап, двойная кабина', uz: 'Pikap, ikki qatorli kabina' }],
-        [{ ru: 'Количество мест', uz: 'Oʻrindiqlar soni' }, { ru: '5', uz: '5' }],
-        [{ ru: 'Д × Ш × В', uz: 'U × E × B' }, { ru: '5330 × 1965 × 1880 мм', uz: '5330 × 1965 × 1880 mm' }],
-        [{ ru: 'Колёсная база', uz: 'Gʻildirak bazasi' }, { ru: '3110 мм', uz: '3110 mm' }],
-        [{ ru: 'Дорожный просвет', uz: 'Yoʻl tirqishi' }, { ru: '230 мм', uz: '230 mm' }],
-        [{ ru: 'Грузовая платформа', uz: 'Yuk platformasi' }, { ru: '1520 × 1590 × 470 мм', uz: '1520 × 1590 × 470 mm' }],
-        [{ ru: 'Шины', uz: 'Shinalar' }, { ru: '265/60 R18', uz: '265/60 R18' }]
-      ]},
-      { group: { ru: 'Мультимедиа', uz: 'Multimedia' }, rows: [
-        [{ ru: 'Экран', uz: 'Ekran' }, { ru: '10,4″ сенсорный', uz: '10,4″ sensorli' }],
-        [{ ru: 'Смартфон', uz: 'Smartfon' }, { ru: 'Apple CarPlay, Android Auto', uz: 'Apple CarPlay, Android Auto' }],
-        [{ ru: 'Аудио', uz: 'Audio' }, { ru: 'Bluetooth, 6 динамиков', uz: 'Bluetooth, 6 ta karnay' }]
-      ]}
-    ],
-
-    /* --- ЦВЕТА ---
-       img — фото автомобиля без фона (PNG/WebP с прозрачностью), hex — цвет кружка */
-    colors: [
-      { name: { ru: 'Белый глянец', uz: 'Oq yaltiroq' },          hex: '#f3f4f4', img: 'assets/img/t9/c-white.webp' },
-      { name: { ru: 'Серая платина', uz: 'Kulrang platina' },     hex: '#5b5f62', img: 'assets/img/t9/c-grey.webp' },
-      { name: { ru: 'Синий сапфир', uz: 'Safir koʻk' },           hex: '#21408c', img: 'assets/img/t9/c-blue.webp' },
-      { name: { ru: 'Серебристый фантом', uz: 'Kumushrang fantom' }, hex: '#b9bdc1', img: 'assets/img/t9/c-silver.webp' },
-      { name: { ru: 'Чёрный жемчуг', uz: 'Qora marvarid' },       hex: '#17191b', img: 'assets/img/t9/c-black.webp' },
-      { name: { ru: 'Рубиновый красный', uz: 'Yoqut qizil' },     hex: '#c42a1c', img: 'assets/img/t9/c-red.webp' }
-    ],
-
-    /* --- ФОТОГРАФИИ ---
-       hero — главное фото (слайдер). src — большое, srcMobile — для телефонов */
-    hero: { src: 'assets/img/t9/a1.webp', srcMobile: 'assets/img/t9/a1-m.webp', pos: '38% 55%' },
-    // Фото в карточке «Модельный ряд». cardPos — какую часть фото показывать (X% Y%)
-    card: 'assets/img/t9/a3.webp', cardPos: '50% 55%',
-    gallery: [
-      { src: 'assets/img/t9/a1.webp', thumb: 'assets/img/t9/a1-800.webp', alt: { ru: 'JAC T9 в горах', uz: 'Togʻlardagi JAC T9' } },
-      { src: 'assets/img/t9/a2.webp', thumb: 'assets/img/t9/a2-800.webp', alt: { ru: 'JAC T9 в прыжке на дюнах', uz: 'Qum barxanlarida sakrayotgan JAC T9' } },
-      { src: 'assets/img/t9/a3.webp', thumb: 'assets/img/t9/a3-800.webp', alt: { ru: 'JAC T9 преодолевает горную реку', uz: 'JAC T9 togʻ daryosidan oʻtmoqda' } },
-      { src: 'assets/img/t9/a4.webp', thumb: 'assets/img/t9/a4-800.webp', alt: { ru: 'JAC T9 на дороге в степи на закате', uz: 'Quyosh botishida dashtdagi JAC T9' } },
-      { src: 'assets/img/t9/interior.webp', thumb: 'assets/img/t9/interior-800.webp', alt: { ru: 'Салон JAC T9', uz: 'JAC T9 saloni' } }
-    ]
-  },
-
-  /* ======================= JAC RF8 ======================= */
-  {
-    id: 'rf8',
-    name: 'JAC RF8',
-    apiModel: 'RF8',
-    bodyType: { ru: 'Минивэн · 7 мест', uz: 'Miniven · 7 oʻrindiq' },
-    slogan:   { ru: 'Бизнес-класс для всей семьи', uz: 'Butun oila uchun biznes-klass' },
-
-    trims: [
-      {
-        name: 'Flagship',
-        retail: 498000000,
-        special: 444675000,
-        note: { ru: '7 мест · 2.0T 252 л.с. · 8АКПП · ADAS L2', uz: '7 oʻrindiq · 2.0T 252 o.k. · 8AT · ADAS L2' }
-      }
-    ],
-
-    stats: [
-      { value: 252,  unit: { ru: 'л.с.', uz: 'o.k.' }, label: { ru: 'мощность', uz: 'quvvat' } },
-      { value: 7,    unit: { ru: 'мест', uz: 'oʻrin' }, label: { ru: 'в салоне', uz: 'salonda' } },
-      { value: 3100, unit: { ru: 'мм', uz: 'mm' },     label: { ru: 'колёсная база', uz: 'gʻildirak bazasi' } },
-      { value: 12.3, unit: { ru: '″', uz: '″' },       label: { ru: 'два экрана', uz: 'ikki ekran' }, decimals: 1 }
-    ],
-
-    features: [
-      { ru: 'Две электрические сдвижные двери', uz: 'Ikki elektr surilma eshik' },
-      { ru: 'Двойной люк', uz: 'Qoʻsh lyuk' },
-      { ru: 'Приборная панель 12,3″ и сенсорный экран 12,3″', uz: '12,3″ asboblar paneli va 12,3″ sensorli ekran' },
-      { ru: 'Ассистенты ADAS уровня L2, ABS, ESP', uz: 'L2 darajali ADAS yordamchilari, ABS, ESP' },
-      { ru: 'Камера кругового обзора 360°', uz: '360° aylanma koʻrinish kamerasi' },
-      { ru: 'Умные светодиодные фары', uz: 'Aqlli LED faralar' }
-    ],
-
-    specs: [
-      { group: { ru: 'Двигатель и трансмиссия', uz: 'Dvigatel va transmissiya' }, rows: [
-        [{ ru: 'Двигатель', uz: 'Dvigatel' }, { ru: '2.0 л, бензин, турбо', uz: '2.0 l, benzin, turbo' }],
-        [{ ru: 'Мощность', uz: 'Quvvat' }, { ru: '252 л.с.', uz: '252 o.k.' }],
-        [{ ru: 'Коробка передач', uz: 'Uzatmalar qutisi' }, { ru: '8-ступенчатая АКПП', uz: '8 pogʻonali avtomat' }],
-        [{ ru: 'Привод', uz: 'Yuritma' }, { ru: 'Передний', uz: 'Old' }],
-        [{ ru: 'Топливный бак', uz: 'Yonilgʻi baki' }, { ru: '65 л', uz: '65 l' }]
-      ]},
-      { group: { ru: 'Кузов и габариты', uz: 'Kuzov va oʻlchamlar' }, rows: [
-        [{ ru: 'Тип кузова', uz: 'Kuzov turi' }, { ru: 'Минивэн, 5 дверей', uz: 'Miniven, 5 eshik' }],
-        [{ ru: 'Количество мест', uz: 'Oʻrindiqlar soni' }, { ru: '7', uz: '7' }],
-        [{ ru: 'Д × Ш × В', uz: 'U × E × B' }, { ru: '5215 × 1895 × 1830 мм', uz: '5215 × 1895 × 1830 mm' }],
-        [{ ru: 'Колёсная база', uz: 'Gʻildirak bazasi' }, { ru: '3100 мм', uz: '3100 mm' }],
-        [{ ru: 'Шины', uz: 'Shinalar' }, { ru: 'R18', uz: 'R18' }]
-      ]},
-      { group: { ru: 'Безопасность и комфорт', uz: 'Xavfsizlik va qulaylik' }, rows: [
-        [{ ru: 'Системы', uz: 'Tizimlar' }, { ru: 'ABS, ESP, ADAS L2', uz: 'ABS, ESP, ADAS L2' }],
-        [{ ru: 'Камера', uz: 'Kamera' }, { ru: 'Круговой обзор 360°', uz: '360° aylanma koʻrinish' }],
-        [{ ru: 'Фары', uz: 'Faralar' }, { ru: 'Умные LED', uz: 'Aqlli LED' }],
-        [{ ru: 'Двери', uz: 'Eshiklar' }, { ru: 'Две электрические сдвижные', uz: 'Ikkita elektr surilma' }],
-        [{ ru: 'Крыша', uz: 'Tom' }, { ru: 'Двойной люк', uz: 'Qoʻsh lyuk' }]
-      ]}
-    ],
-
-    colors: [
-      { name: { ru: 'Чёрный жемчуг', uz: 'Qora marvarid' },     hex: '#16181a', img: 'assets/img/rf8/c-black.webp' },
-      { name: { ru: 'Белый глянец', uz: 'Oq yaltiroq' },        hex: '#f3f4f4', img: 'assets/img/rf8/c-white.webp' },
-      { name: { ru: 'Светло-серый', uz: 'Och kulrang' },        hex: '#d9dad8', img: 'assets/img/rf8/c-lightgrey.webp' },
-      { name: { ru: 'Серая платина', uz: 'Kulrang platina' },   hex: '#a3a6a6', img: 'assets/img/rf8/c-platinum.webp' },
-      { name: { ru: 'Чернильно-синий', uz: 'Siyohrang koʻk' },  hex: '#1c2a4b', img: 'assets/img/rf8/c-blue.webp' }
-    ],
-
-    hero: { src: 'assets/img/rf8/a1.webp', srcMobile: 'assets/img/rf8/a1-m.webp', pos: '45% 60%' },
-    card: 'assets/img/rf8/a2.webp', cardPos: '40% 65%',
-    gallery: [
-      { src: 'assets/img/rf8/a1.webp', thumb: 'assets/img/rf8/a1-800.webp', alt: { ru: 'JAC RF8 на ночном проспекте', uz: 'Tungi shohkoʻchadagi JAC RF8' } },
-      { src: 'assets/img/rf8/a2.webp', thumb: 'assets/img/rf8/a2-800.webp', alt: { ru: 'JAC RF8 у входа в отель', uz: 'Mehmonxona kirishidagi JAC RF8' } },
-      { src: 'assets/img/rf8/a3.webp', thumb: 'assets/img/rf8/a3-800.webp', alt: { ru: 'Водитель открывает дверь JAC RF8 бизнесмену', uz: 'Haydovchi JAC RF8 eshigini ochmoqda' } },
-      { src: 'assets/img/rf8/a4.webp', thumb: 'assets/img/rf8/a4-800.webp', alt: { ru: 'JAC RF8 на трассе', uz: 'Trassadagi JAC RF8' } },
-      { src: 'assets/img/rf8/seats.webp', thumb: 'assets/img/rf8/seats-800.webp', alt: { ru: 'Кресла второго ряда JAC RF8', uz: 'JAC RF8 ikkinchi qator kreslolari' } },
-      { src: 'assets/img/rf8/interior.webp', thumb: 'assets/img/rf8/interior-800.webp', alt: { ru: 'Место водителя JAC RF8', uz: 'JAC RF8 haydovchi oʻrni' } },
-      { src: 'assets/img/rf8/kids.webp', thumb: 'assets/img/rf8/kids-800.webp', alt: { ru: 'Просторный салон JAC RF8', uz: 'JAC RF8 keng saloni' } }
-    ]
-  },
-
   /* ======================= JAC JS8 ======================= */
   {
     id: 'js8',
@@ -235,6 +69,9 @@ window.MODELS = [
     bodyType: { ru: 'Кроссовер · 7 мест', uz: 'Krossover · 7 oʻrindiq' },
     slogan:   { ru: 'Семь мест. Ноль компромиссов', uz: 'Yetti oʻrindiq. Murosasiz' },
 
+    /* --- ЦЕНЫ И КОМПЛЕКТАЦИИ ---
+       retail  — розничная цена (сум). Если цены пока нет — поставьте null (будет «Цена по запросу»)
+       special — спец. цена (сум), только при прямой покупке. Если нет — поставьте null */
     trims: [
       {
         name: 'Flagship+',
@@ -244,6 +81,7 @@ window.MODELS = [
       }
     ],
 
+    // Цифры-акценты под заголовком модели (анимируются при прокрутке)
     stats: [
       { value: 180, unit: { ru: 'л.с.', uz: 'o.k.' }, label: { ru: 'мощность', uz: 'quvvat' } },
       { value: 300, unit: { ru: 'Н·м', uz: 'N·m' },   label: { ru: 'крутящий момент', uz: 'aylantiruvchi moment' } },
@@ -251,6 +89,7 @@ window.MODELS = [
       { value: 360, unit: { ru: '°', uz: '°' },        label: { ru: 'камера обзора', uz: 'koʻrinish kamerasi' } }
     ],
 
+    // Ключевое оснащение (иконки ставятся автоматически)
     features: [
       { ru: 'Панорамная крыша', uz: 'Panoramali tom' },
       { ru: 'Приборная панель 12,3″ и сенсорный экран 12,3″', uz: '12,3″ asboblar paneli va 12,3″ sensorli ekran' },
@@ -260,6 +99,7 @@ window.MODELS = [
       { ru: 'Диски R19, шины 235/50 R19', uz: 'R19 disklar, 235/50 R19 shinalar' }
     ],
 
+    // Характеристики (таблица). Можно добавлять/удалять строки.
     specs: [
       { group: { ru: 'Двигатель и трансмиссия', uz: 'Dvigatel va transmissiya' }, rows: [
         [{ ru: 'Двигатель', uz: 'Dvigatel' }, { ru: '1.5 л, бензин, турбо', uz: '1.5 l, benzin, turbo' }],
@@ -289,20 +129,218 @@ window.MODELS = [
        spin — спрайт из кадров (сетка cols × rows). img — статичный кадр (запасной вариант). */
     spin: { cols: 7, rows: 7, frames: 49, frameW: 533, frameH: 237 },
     colors: [
+      { name: { ru: 'Чёрный', uz: 'Qora' },  hex: '#141414', img: 'assets/img/js8/c-black.webp', sprite: 'assets/img/js8/360-black.webp' },
       { name: { ru: 'Белый', uz: 'Oq' },     hex: '#f2f2f2', img: 'assets/img/js8/c-white.webp', sprite: 'assets/img/js8/360-white.webp' },
-      { name: { ru: 'Красный', uz: 'Qizil' }, hex: '#a3141d', img: 'assets/img/js8/c-red.webp',   sprite: 'assets/img/js8/360-red.webp' },
-      { name: { ru: 'Чёрный', uz: 'Qora' },  hex: '#141414', img: 'assets/img/js8/c-black.webp', sprite: 'assets/img/js8/360-black.webp' }
+      { name: { ru: 'Красный', uz: 'Qizil' }, hex: '#a3141d', img: 'assets/img/js8/c-red.webp',   sprite: 'assets/img/js8/360-red.webp' }
     ],
 
-    hero: { src: 'assets/img/js8/a1.webp', srcMobile: 'assets/img/js8/a1-m.webp', pos: '55% 60%' },
-    card: 'assets/img/js8/a2.webp', cardPos: '70% 65%',
+    /* --- ФОТОГРАФИИ ---
+       hero — главное фото страницы модели (оно же прописано в js8.html).
+       card — фото в карточке «Модельный ряд». cardPos — какую часть фото показывать (X% Y%) */
+    hero: { src: 'assets/img/js8/a1.webp', srcMobile: 'assets/img/js8/a1-m.webp', pos: '50% 60%' },
+    card: 'assets/img/js8/a1.webp', cardPos: '50% 60%',
     gallery: [
-      { src: 'assets/img/js8/a1.webp', thumb: 'assets/img/js8/a1-800.webp', alt: { ru: 'JAC JS8 на грунтовой дороге', uz: 'Tuproq yoʻldagi JAC JS8' } },
-      { src: 'assets/img/js8/a2.webp', thumb: 'assets/img/js8/a2-800.webp', alt: { ru: 'JAC JS8 на горном серпантине', uz: 'Togʻ serpantinidagi JAC JS8' } },
+      { src: 'assets/img/js8/a1.webp', thumb: 'assets/img/js8/a1-800.webp', alt: { ru: 'JAC JS8 на горном серпантине', uz: 'Togʻ serpantinidagi JAC JS8' } },
+      { src: 'assets/img/js8/a2.webp', thumb: 'assets/img/js8/a2-800.webp', alt: { ru: 'JAC JS8 на грунтовой дороге', uz: 'Tuproq yoʻldagi JAC JS8' } },
       { src: 'assets/img/js8/a3.webp', thumb: 'assets/img/js8/a3-800.webp', alt: { ru: 'JAC JS8 в ночном городе', uz: 'Tungi shahardagi JAC JS8' } },
-      { src: 'assets/img/js8/roof.webp', thumb: 'assets/img/js8/roof-800.webp', alt: { ru: 'Панорамная крыша JAC JS8', uz: 'JAC JS8 panoramali tomi' } },
-      { src: 'assets/img/js8/interior.webp', thumb: 'assets/img/js8/interior-800.webp', alt: { ru: 'Передние кресла JAC JS8', uz: 'JAC JS8 old kreslolari' } },
-      { src: 'assets/img/js8/interior2.webp', thumb: 'assets/img/js8/interior2-800.webp', alt: { ru: 'Салон JAC JS8 на 7 мест', uz: 'JAC JS8 ning 7 oʻrinli saloni' } }
+      { src: 'assets/img/js8/i1.webp', thumb: 'assets/img/js8/i1-800.webp', alt: { ru: 'Место водителя JAC JS8', uz: 'JAC JS8 haydovchi oʻrni' } },
+      { src: 'assets/img/js8/i2.webp', thumb: 'assets/img/js8/i2-800.webp', alt: { ru: 'Второй ряд JAC JS8', uz: 'JAC JS8 ikkinchi qatori' } },
+      { src: 'assets/img/js8/roof.webp', thumb: 'assets/img/js8/roof-800.webp', alt: { ru: 'Панорамная крыша JAC JS8', uz: 'JAC JS8 panoramali tomi' } }
+    ]
+  },
+
+  /* ======================= JAC T8 ======================= */
+  {
+    id: 't8',
+    name: 'JAC T8',
+    apiModel: 'T8',
+    bodyType: { ru: 'Пикап 4×4', uz: 'Pikap 4×4' },
+    slogan:   { ru: 'Создан для работы и дороги', uz: 'Ish va yoʻl uchun yaratilgan' },
+
+    trims: [
+      {
+        name: '4×4',
+        retail: null,      // ⚠️ впишите цену из прайса, например 299000000
+        special: null,
+        note: { ru: '5 мест · 2.0T · 6МКПП · полный привод', uz: '5 oʻrindiq · 2.0T · 6MT · toʻliq yuritma' }
+      }
+    ],
+
+    stats: [
+      { value: 177, unit: { ru: 'л.с.', uz: 'o.k.' }, label: { ru: 'мощность', uz: 'quvvat' } },
+      { value: 6,   unit: { ru: 'МКПП', uz: 'MT' },   label: { ru: 'ступеней', uz: 'pogʻona' } },
+      { value: 220, unit: { ru: 'мм', uz: 'mm' },     label: { ru: 'клиренс', uz: 'yoʻl tirqishi' } },
+      { value: 4,   unit: { ru: '×4', uz: '×4' },     label: { ru: 'полный привод', uz: 'toʻliq yuritma' } }
+    ],
+
+    features: [
+      { ru: 'Полный привод 4×4', uz: '4×4 toʻliq yuritma' },
+      { ru: 'Защитная дуга кузова и боковые подножки', uz: 'Kuzov himoya yoyi va yon zinapoyalar' },
+      { ru: 'Кожаный салон с красной прострочкой', uz: 'Qizil chokli charm salon' },
+      { ru: 'Мультируль в кожаной оплётке', uz: 'Charm qoplamali multirul' },
+      { ru: 'Литые диски, шины 265/60 R18', uz: 'Quyma disklar, 265/60 R18 shinalar' },
+      { ru: 'Кондиционер, электростеклоподъёмники и электрозеркала', uz: 'Konditsioner, elektr oyna koʻtargichlar va elektr oynalar' }
+    ],
+
+    specs: [
+      { group: { ru: 'Двигатель и трансмиссия', uz: 'Dvigatel va transmissiya' }, rows: [
+        [{ ru: 'Двигатель', uz: 'Dvigatel' }, { ru: '2.0 л, бензин, турбо', uz: '2.0 l, benzin, turbo' }],
+        [{ ru: 'Мощность', uz: 'Quvvat' }, { ru: '177 л.с.', uz: '177 o.k.' }],
+        [{ ru: 'Коробка передач', uz: 'Uzatmalar qutisi' }, { ru: '6-ступенчатая механика', uz: '6 pogʻonali mexanika' }],
+        [{ ru: 'Привод', uz: 'Yuritma' }, { ru: 'Полный 4×4', uz: 'Toʻliq 4×4' }],
+        [{ ru: 'Топливный бак', uz: 'Yonilgʻi baki' }, { ru: '75 л', uz: '75 l' }]
+      ]},
+      { group: { ru: 'Кузов и габариты', uz: 'Kuzov va oʻlchamlar' }, rows: [
+        [{ ru: 'Тип кузова', uz: 'Kuzov turi' }, { ru: 'Пикап, двойная кабина', uz: 'Pikap, ikki qatorli kabina' }],
+        [{ ru: 'Количество мест', uz: 'Oʻrindiqlar soni' }, { ru: '5', uz: '5' }],
+        [{ ru: 'Д × Ш × В', uz: 'U × E × B' }, { ru: '5325 × 1880 × 1830 мм', uz: '5325 × 1880 × 1830 mm' }],
+        [{ ru: 'Колёсная база', uz: 'Gʻildirak bazasi' }, { ru: '3090 мм', uz: '3090 mm' }],
+        [{ ru: 'Дорожный просвет', uz: 'Yoʻl tirqishi' }, { ru: '220 мм', uz: '220 mm' }],
+        [{ ru: 'Шины', uz: 'Shinalar' }, { ru: '265/60 R18', uz: '265/60 R18' }]
+      ]}
+    ],
+
+    /* --- ЦВЕТА ---
+       img — фото автомобиля без фона (WebP с прозрачностью), hex — цвет кружка.
+       Чтобы добавить цвет — добавьте строку с новым фото. */
+    colors: [
+      { name: { ru: 'Чёрный', uz: 'Qora' }, hex: '#16181a', img: 'assets/img/t8/c-black.webp' }
+    ],
+
+    hero: { src: 'assets/img/t8/a1.webp', srcMobile: 'assets/img/t8/a1-m.webp', pos: '55% 55%' },
+    card: 'assets/img/t8/a1.webp', cardPos: '55% 55%',
+    gallery: [
+      { src: 'assets/img/t8/a1.webp', thumb: 'assets/img/t8/a1-800.webp', alt: { ru: 'JAC T8 преодолевает горную реку', uz: 'JAC T8 togʻ daryosidan oʻtmoqda' } },
+      { src: 'assets/img/t8/a2.webp', thumb: 'assets/img/t8/a2-800.webp', alt: { ru: 'JAC T8 в прыжке на дюнах', uz: 'Qum barxanlarida sakrayotgan JAC T8' } },
+      { src: 'assets/img/t8/a3.webp', thumb: 'assets/img/t8/a3-800.webp', alt: { ru: 'JAC T8 на горной дороге', uz: 'Togʻ yoʻlidagi JAC T8' } },
+      { src: 'assets/img/t8/i1.webp', thumb: 'assets/img/t8/i1-800.webp', alt: { ru: 'Место водителя JAC T8', uz: 'JAC T8 haydovchi oʻrni' } },
+      { src: 'assets/img/t8/i2.webp', thumb: 'assets/img/t8/i2-800.webp', alt: { ru: 'Задний ряд JAC T8', uz: 'JAC T8 orqa qatori' } }
+    ]
+  },
+
+  /* ======================= JAC M4 ======================= */
+  {
+    id: 'm4',
+    name: 'JAC M4',
+    apiModel: 'M4',
+    bodyType: { ru: 'Микроавтобус · 9 мест', uz: 'Mikroavtobus · 9 oʻrindiq' },
+    slogan:   { ru: 'Бизнес-трансфер для всей команды', uz: 'Butun jamoa uchun biznes-transfer' },
+
+    trims: [
+      {
+        name: '8+1',
+        retail: null,      // ⚠️ впишите цену из прайса
+        special: null,
+        note: { ru: '9 мест (8+1) · 2.0 бензин · 5МКПП', uz: '9 oʻrindiq (8+1) · 2.0 benzin · 5MT' }
+      }
+    ],
+
+    stats: [
+      { value: 9,    unit: { ru: 'мест', uz: 'oʻrin' }, label: { ru: 'в салоне', uz: 'salonda' } },
+      { value: 2.0,  unit: { ru: 'л', uz: 'l' },        label: { ru: 'двигатель', uz: 'dvigatel' }, decimals: 1 },
+      { value: 3080, unit: { ru: 'мм', uz: 'mm' },      label: { ru: 'колёсная база', uz: 'gʻildirak bazasi' } },
+      { value: 1970, unit: { ru: 'мм', uz: 'mm' },      label: { ru: 'высота', uz: 'balandlik' } }
+    ],
+
+    features: [
+      { ru: '9 мест: водитель + 8 пассажиров', uz: '9 oʻrindiq: haydovchi + 8 yoʻlovchi' },
+      { ru: 'Сдвижная боковая дверь', uz: 'Surilma yon eshik' },
+      { ru: 'Кресла с подголовниками и ремнями безопасности', uz: 'Bosh tayanchli va xavfsizlik kamarli kreslolar' },
+      { ru: 'Тонированные стёкла салона', uz: 'Tonirovkali salon oynalari' },
+      { ru: 'Кондиционер', uz: 'Konditsioner' },
+      { ru: 'Мультируль и литые диски', uz: 'Multirul va quyma disklar' }
+    ],
+
+    specs: [
+      { group: { ru: 'Двигатель и трансмиссия', uz: 'Dvigatel va transmissiya' }, rows: [
+        [{ ru: 'Двигатель', uz: 'Dvigatel' }, { ru: '2.0 л, бензин', uz: '2.0 l, benzin' }],
+        [{ ru: 'Коробка передач', uz: 'Uzatmalar qutisi' }, { ru: '5-ступенчатая механика', uz: '5 pogʻonali mexanika' }]
+      ]},
+      { group: { ru: 'Кузов и габариты', uz: 'Kuzov va oʻlchamlar' }, rows: [
+        [{ ru: 'Тип кузова', uz: 'Kuzov turi' }, { ru: 'Микроавтобус', uz: 'Mikroavtobus' }],
+        [{ ru: 'Количество мест', uz: 'Oʻrindiqlar soni' }, { ru: '9 (8+1)', uz: '9 (8+1)' }],
+        [{ ru: 'Д × Ш × В', uz: 'U × E × B' }, { ru: '5200 × 1890 × 1970 мм', uz: '5200 × 1890 × 1970 mm' }],
+        [{ ru: 'Колёсная база', uz: 'Gʻildirak bazasi' }, { ru: '3080 мм', uz: '3080 mm' }]
+      ]}
+    ],
+
+    colors: [
+      { name: { ru: 'Белый', uz: 'Oq' }, hex: '#f3f4f4', img: 'assets/img/m4/c-white.webp' }
+    ],
+
+    hero: { src: 'assets/img/m4/a1.webp', srcMobile: 'assets/img/m4/a1-m.webp', pos: '50% 60%' },
+    card: 'assets/img/m4/a1.webp', cardPos: '50% 62%',
+    gallery: [
+      { src: 'assets/img/m4/a1.webp', thumb: 'assets/img/m4/a1-800.webp', alt: { ru: 'JAC M4 у бизнес-центра', uz: 'Biznes-markaz oldidagi JAC M4' } },
+      { src: 'assets/img/m4/a2.webp', thumb: 'assets/img/m4/a2-800.webp', alt: { ru: 'Трансфер из аэропорта на JAC M4', uz: 'Aeroportdan JAC M4 da transfer' } },
+      { src: 'assets/img/m4/a3.webp', thumb: 'assets/img/m4/a3-800.webp', alt: { ru: 'JAC M4 на трассе', uz: 'Trassadagi JAC M4' } },
+      { src: 'assets/img/m4/i1.webp', thumb: 'assets/img/m4/i1-800.webp', alt: { ru: 'Место водителя JAC M4', uz: 'JAC M4 haydovchi oʻrni' } },
+      { src: 'assets/img/m4/i2.webp', thumb: 'assets/img/m4/i2-800.webp', alt: { ru: 'Пассажирский салон JAC M4', uz: 'JAC M4 yoʻlovchi saloni' } }
+    ]
+  },
+
+  /* ======================= JAC M3 ======================= */
+  {
+    id: 'm3',
+    name: 'JAC M3',
+    apiModel: 'M3',
+    bodyType: { ru: 'Минивэн · 9 мест', uz: 'Miniven · 9 oʻrindiq' },
+    slogan:   { ru: 'Надёжный партнёр вашего бизнеса', uz: 'Biznesingizning ishonchli hamkori' },
+
+    trims: [
+      {
+        name: 'Plus',
+        retail: null,      // ⚠️ впишите цену из прайса
+        special: null,
+        note: { ru: '9 мест · 1.8 бензин 133 л.с. · 5МКПП', uz: '9 oʻrindiq · 1.8 benzin 133 o.k. · 5MT' }
+      }
+    ],
+
+    stats: [
+      { value: 9,    unit: { ru: 'мест', uz: 'oʻrin' }, label: { ru: 'в салоне', uz: 'salonda' } },
+      { value: 133,  unit: { ru: 'л.с.', uz: 'o.k.' },  label: { ru: 'мощность', uz: 'quvvat' } },
+      { value: 3110, unit: { ru: 'мм', uz: 'mm' },      label: { ru: 'колёсная база', uz: 'gʻildirak bazasi' } },
+      { value: 8.5,  unit: { ru: 'л', uz: 'l' },        label: { ru: 'расход на 100 км', uz: '100 km ga sarf' }, decimals: 1 }
+    ],
+
+    features: [
+      { ru: '9 мест: 2 + 2 + 2 + 3', uz: '9 oʻrindiq: 2 + 2 + 2 + 3' },
+      { ru: 'Кресла с подлокотниками', uz: 'Tirsakli kreslolar' },
+      { ru: 'Сдвижная боковая дверь', uz: 'Surilma yon eshik' },
+      { ru: 'Кондиционер', uz: 'Konditsioner' },
+      { ru: 'Электростеклоподъёмники и электрозеркала', uz: 'Elektr oyna koʻtargichlar va elektr oynalar' },
+      { ru: 'Электроусилитель руля', uz: 'Elektr rul kuchaytirgichi' }
+    ],
+
+    specs: [
+      { group: { ru: 'Двигатель и трансмиссия', uz: 'Dvigatel va transmissiya' }, rows: [
+        [{ ru: 'Двигатель', uz: 'Dvigatel' }, { ru: '1.8 л, бензин', uz: '1.8 l, benzin' }],
+        [{ ru: 'Мощность', uz: 'Quvvat' }, { ru: '133 л.с. (98 кВт)', uz: '133 o.k. (98 kVt)' }],
+        [{ ru: 'Крутящий момент', uz: 'Aylantiruvchi moment' }, { ru: '182 Н·м', uz: '182 N·m' }],
+        [{ ru: 'Коробка передач', uz: 'Uzatmalar qutisi' }, { ru: '5-ступенчатая механика', uz: '5 pogʻonali mexanika' }],
+        [{ ru: 'Топливный бак', uz: 'Yonilgʻi baki' }, { ru: '55 л', uz: '55 l' }]
+      ]},
+      { group: { ru: 'Кузов и габариты', uz: 'Kuzov va oʻlchamlar' }, rows: [
+        [{ ru: 'Тип кузова', uz: 'Kuzov turi' }, { ru: 'Минивэн', uz: 'Miniven' }],
+        [{ ru: 'Количество мест', uz: 'Oʻrindiqlar soni' }, { ru: '9', uz: '9' }],
+        [{ ru: 'Д × Ш × В', uz: 'U × E × B' }, { ru: '5115 × 1765 × 1900 мм', uz: '5115 × 1765 × 1900 mm' }],
+        [{ ru: 'Колёсная база', uz: 'Gʻildirak bazasi' }, { ru: '3110 мм', uz: '3110 mm' }],
+        [{ ru: 'Шины', uz: 'Shinalar' }, { ru: '205/65 R15', uz: '205/65 R15' }]
+      ]}
+    ],
+
+    colors: [
+      { name: { ru: 'Белый', uz: 'Oq' }, hex: '#f3f4f4', img: 'assets/img/m3/c-white.webp' }
+    ],
+
+    hero: { src: 'assets/img/m3/a1.webp', srcMobile: 'assets/img/m3/a1-m.webp', pos: '55% 60%' },
+    card: 'assets/img/m3/a1.webp', cardPos: '60% 62%',
+    gallery: [
+      { src: 'assets/img/m3/a1.webp', thumb: 'assets/img/m3/a1-800.webp', alt: { ru: 'Водитель встречает гостя у JAC M3', uz: 'Haydovchi JAC M3 yonida mehmonni kutib olmoqda' } },
+      { src: 'assets/img/m3/a2.webp', thumb: 'assets/img/m3/a2-800.webp', alt: { ru: 'JAC M3 у бизнес-центра вечером', uz: 'Kechqurun biznes-markaz oldidagi JAC M3' } },
+      { src: 'assets/img/m3/a3.webp', thumb: 'assets/img/m3/a3-800.webp', alt: { ru: 'JAC M3 в городе', uz: 'Shahardagi JAC M3' } },
+      { src: 'assets/img/m3/i1.webp', thumb: 'assets/img/m3/i1-800.webp', alt: { ru: 'Место водителя JAC M3', uz: 'JAC M3 haydovchi oʻrni' } },
+      { src: 'assets/img/m3/i2.webp', thumb: 'assets/img/m3/i2-800.webp', alt: { ru: 'Пассажирский салон JAC M3', uz: 'JAC M3 yoʻlovchi saloni' } }
     ]
   }
 ];

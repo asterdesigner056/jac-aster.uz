@@ -14,21 +14,25 @@ window.I18N = {
   ru: {
     /* --- SEO: заголовок вкладки и описание для поисковиков --- */
     'meta.title': 'jac-aster.uz',
-    'meta.description': 'Официальный дилер JAC в Самарканде: пикап JAC T9, минивэн JAC RF8 и кроссовер JAC JS8. Актуальные цены, льготный кредит и рассрочка, тест-драйв. Чопон Ота, 50A. ☎ +998 55 516 33 55',
+    'meta.description': 'Официальный дилер JAC в Самарканде: кроссовер JAC JS8, пикап JAC T8, микроавтобусы JAC M4 и JAC M3. Актуальные цены, льготный кредит и рассрочка, тест-драйв. Чопон Ота, 50A. ☎ +998 55 516 33 55',
 
-    /* --- Страницы моделей (t9.html, rf8.html, js8.html): заголовок вкладки, описание, подзаголовок --- */
-    'page.t9.title': 'JAC T9 | jac-aster.uz',
-    'page.t9.description': 'JAC T9 в Самарканде — рамный пикап 4×4, 2.0T 252 л.с., 8АКПП, клиренс 230 мм. Цена от 419 265 000 сум, кредит и рассрочка, тест-драйв у официального дилера JAC ASTER.',
-    'page.t9.slogan': 'Покоряет любые дороги',
-    'page.t9.alt': 'JAC T9 в горах',
-    'page.rf8.title': 'JAC RF8 | jac-aster.uz',
-    'page.rf8.description': 'JAC RF8 в Самарканде — 7-местный минивэн бизнес-класса, 2.0T 252 л.с., 8АКПП, ADAS L2, электрические сдвижные двери. Цена от 444 675 000 сум, кредит и тест-драйв.',
-    'page.rf8.slogan': 'Бизнес-класс для всей семьи',
-    'page.rf8.alt': 'Минивэн JAC RF8 на ночном проспекте',
+    /* --- Страницы моделей (js8.html, t8.html, m4.html, m3.html): заголовок вкладки, описание, подзаголовок --- */
     'page.js8.title': 'JAC JS8 | jac-aster.uz',
     'page.js8.description': 'JAC JS8 в Самарканде — 7-местный кроссовер, 1.5T 180 л.с., робот 7DCT, панорамная крыша, камера 360°. Цена от 313 950 000 сум, кредит и тест-драйв.',
     'page.js8.slogan': 'Семь мест. Ноль компромиссов',
-    'page.js8.alt': 'Кроссовер JAC JS8 на грунтовой дороге',
+    'page.js8.alt': 'Кроссовер JAC JS8 на горном серпантине',
+    'page.t8.title': 'JAC T8 | jac-aster.uz',
+    'page.t8.description': 'JAC T8 в Самарканде — рамный пикап 4×4 с двойной кабиной, 2.0T, 6МКПП, клиренс 220 мм. Цены, кредит и рассрочка, тест-драйв у официального дилера JAC ASTER.',
+    'page.t8.slogan': 'Создан для работы и дороги',
+    'page.t8.alt': 'Пикап JAC T8 преодолевает горную реку',
+    'page.m4.title': 'JAC M4 | jac-aster.uz',
+    'page.m4.description': 'JAC M4 в Самарканде — 9-местный микроавтобус для бизнеса, трансфера и туризма: бензин 2.0, сдвижная дверь, кондиционер. Цены, кредит и тест-драйв у официального дилера JAC ASTER.',
+    'page.m4.slogan': 'Бизнес-трансфер для всей команды',
+    'page.m4.alt': 'Микроавтобус JAC M4 у бизнес-центра',
+    'page.m3.title': 'JAC M3 | jac-aster.uz',
+    'page.m3.description': 'JAC M3 в Самарканде — 9-местный минивэн для бизнеса и семьи: 1.8 бензин 133 л.с., 5МКПП, расход около 8,5 л. Цены, кредит и тест-драйв у официального дилера JAC ASTER.',
+    'page.m3.slogan': 'Надёжный партнёр вашего бизнеса',
+    'page.m3.alt': 'Минивэн JAC M3 у отеля',
     'models.others': 'Другие модели JAC',
 
     /* --- Шапка и меню --- */
@@ -56,9 +60,10 @@ window.I18N = {
     'hero.title': 'Автомобили JAC',
     'hero.sub': 'На любой момент жизни',
     'hero.seo': 'JAC в Самарканде — официальный дилер JAC ASTER.',
-    'hero.alt': 'JAC T9 на горной дороге',
+    'hero.alt': 'Автомобили JAC',
     'hero.from': 'от',
     'price.from': 'от {p} сум',
+    'price.request': 'Цена по запросу',
     'model.save': 'Выгода',
 
     /* --- Бегущая строка --- */
@@ -72,7 +77,7 @@ window.I18N = {
     /* --- Модельный ряд --- */
     'models.kicker': 'Модельный ряд',
     'models.title': 'Выберите свой JAC',
-    'models.lead': 'Три характера — пикап для бездорожья, минивэн бизнес-класса и семиместный кроссовер для города.',
+    'models.lead': 'Четыре характера — семиместный кроссовер, пикап 4×4 для бездорожья и работы, микроавтобусы для бизнеса и трансфера.',
 
     /* --- Блок модели --- */
     'model.colors': 'Цвет кузова',
@@ -86,10 +91,12 @@ window.I18N = {
     'model.spin': 'Потяните, чтобы повернуть на 360°',
     'model.disclaimer': 'Характеристики и оснащение указаны для справки и могут отличаться. Уточняйте у менеджера.',
 
-    't9.title': 'JAC T9 — пикап, которому не нужны дороги',
-    't9.text': 'Рамный пикап с полным приводом 4×4, турбомотором 2.0 л мощностью 252 л.с. и 8-ступенчатым автоматом. Клиренс 230 мм, грузовая платформа 1520×1590×470 мм и мультимедиа 10,4″ с Apple CarPlay и Android Auto — для работы, путешествий и города.',
-    'rf8.title': 'JAC RF8 — бизнес-класс для всей семьи',
-    'rf8.text': 'Семиместный минивэн с турбомотором 2.0 л мощностью 252 л.с. и 8-ступенчатым автоматом. Две электрические сдвижные двери, двойной люк, два экрана по 12,3″, камера 360° и ассистенты ADAS уровня L2.',
+    't8.title': 'JAC T8 — пикап для работы и приключений',
+    't8.text': 'Рамный пикап с двойной кабиной и полным приводом 4×4. Турбомотор 2.0 л, 6-ступенчатая механика, клиренс 220 мм, защитная дуга кузова, подножки и кожаный салон — для стройки, фермы, дальних поездок и города.',
+    'm4.title': 'JAC M4 — микроавтобус для бизнеса и трансфера',
+    'm4.text': 'Просторный 9-местный микроавтобус с бензиновым мотором 2.0 л и механической коробкой. Сдвижная боковая дверь, тонированные стёкла, кондиционер и удобные кресла с подголовниками — для корпоративных перевозок, трансферов, туризма и большой семьи.',
+    'm3.title': 'JAC M3 — надёжный минивэн для бизнеса и семьи',
+    'm3.text': 'Экономичный 9-местный минивэн с бензиновым мотором 1.8 л (133 л.с.) и 5-ступенчатой механикой. Сдвижная дверь, кондиционер, электростеклоподъёмники и расход около 8,5 л на 100 км — для такси, трансфера, доставки сотрудников и семейных поездок.',
     'js8.title': 'JAC JS8 — семь мест, ноль компромиссов',
     'js8.text': 'Семиместный кроссовер с турбомотором 1.5 л мощностью 180 л.с. и 7-ступенчатым роботом DCT. Панорамная крыша, две панели по 12,3″, камера кругового обзора 360°, умные LED-фары и 19-дюймовые диски.',
 
@@ -196,20 +203,24 @@ window.I18N = {
 
   uz: {
     'meta.title': 'jac-aster.uz',
-    'meta.description': 'Samarqanddagi JAC rasmiy dileri: JAC T9 pikapi, JAC RF8 miniveni va JAC JS8 krossoveri. Dolzarb narxlar, imtiyozli kredit va muddatli toʻlov, test-drayv. Chopon Ota, 50A. ☎ +998 55 516 33 55',
+    'meta.description': 'Samarqanddagi JAC rasmiy dileri: JAC JS8 krossoveri, JAC T8 pikapi, JAC M4 va JAC M3 mikroavtobuslari. Dolzarb narxlar, imtiyozli kredit va muddatli toʻlov, test-drayv. Chopon Ota, 50A. ☎ +998 55 516 33 55',
 
-    'page.t9.title': 'JAC T9 | jac-aster.uz',
-    'page.t9.description': 'Samarqandda JAC T9 — 4×4 ramali pikap, 2.0T 252 o.k., 8AT, 230 mm yoʻl tirqishi. Narxi 419 265 000 soʻmdan, kredit va muddatli toʻlov, JAC ASTER rasmiy dilerida test-drayv.',
-    'page.t9.slogan': 'Har qanday yoʻlni zabt etadi',
-    'page.t9.alt': 'Togʻlardagi JAC T9',
-    'page.rf8.title': 'JAC RF8 | jac-aster.uz',
-    'page.rf8.description': 'Samarqandda JAC RF8 — 7 oʻrinli biznes-klass miniven, 2.0T 252 o.k., 8AT, ADAS L2, elektr surilma eshiklar. Narxi 444 675 000 soʻmdan, kredit va test-drayv.',
-    'page.rf8.slogan': 'Butun oila uchun biznes-klass',
-    'page.rf8.alt': 'Tungi shahar shohkoʻchasidagi JAC RF8 miniveni',
     'page.js8.title': 'JAC JS8 | jac-aster.uz',
     'page.js8.description': 'Samarqandda JAC JS8 — 7 oʻrinli krossover, 1.5T 180 o.k., 7DCT robot, panoramali tom, 360° kamera. Narxi 313 950 000 soʻmdan, kredit va test-drayv.',
     'page.js8.slogan': 'Yetti oʻrindiq. Murosasiz',
-    'page.js8.alt': 'Tuproq yoʻldagi JAC JS8 krossoveri',
+    'page.js8.alt': 'Togʻ serpantinidagi JAC JS8 krossoveri',
+    'page.t8.title': 'JAC T8 | jac-aster.uz',
+    'page.t8.description': 'Samarqandda JAC T8 — ikki qatorli kabinali 4×4 ramali pikap, 2.0T, 6MT, 220 mm yoʻl tirqishi. Narxlar, kredit va muddatli toʻlov, JAC ASTER rasmiy dilerida test-drayv.',
+    'page.t8.slogan': 'Ish va yoʻl uchun yaratilgan',
+    'page.t8.alt': 'Togʻ daryosidan oʻtayotgan JAC T8 pikapi',
+    'page.m4.title': 'JAC M4 | jac-aster.uz',
+    'page.m4.description': 'Samarqandda JAC M4 — biznes, transfer va turizm uchun 9 oʻrinli mikroavtobus: 2.0 benzin, surilma eshik, konditsioner. Narxlar, kredit va JAC ASTER rasmiy dilerida test-drayv.',
+    'page.m4.slogan': 'Butun jamoa uchun biznes-transfer',
+    'page.m4.alt': 'Biznes-markaz oldidagi JAC M4 mikroavtobusi',
+    'page.m3.title': 'JAC M3 | jac-aster.uz',
+    'page.m3.description': 'Samarqandda JAC M3 — biznes va oila uchun 9 oʻrinli miniven: 1.8 benzin 133 o.k., 5MT, taxminan 8,5 l sarf. Narxlar, kredit va JAC ASTER rasmiy dilerida test-drayv.',
+    'page.m3.slogan': 'Biznesingizning ishonchli hamkori',
+    'page.m3.alt': 'Mehmonxona oldidagi JAC M3 miniveni',
     'models.others': 'Boshqa JAC modellari',
 
     'skip': 'Asosiy mazmunga oʻtish',
@@ -234,9 +245,10 @@ window.I18N = {
     'hero.title': 'JAC avtomobillari',
     'hero.sub': 'Hayotning har bir lahzasi uchun',
     'hero.seo': 'Samarqandda JAC — rasmiy diler JAC ASTER.',
-    'hero.alt': 'Togʻ yoʻlidagi JAC T9',
+    'hero.alt': 'JAC avtomobillari',
     'hero.from': 'dan',
     'price.from': '{p} soʻmdan',
+    'price.request': 'Narxi soʻrov boʻyicha',
     'model.save': 'Foyda',
 
     'ticker.1': 'Samarqanddagi JAC rasmiy dileri',
@@ -248,7 +260,7 @@ window.I18N = {
 
     'models.kicker': 'Model qatori',
     'models.title': 'Oʻz JAC avtomobilingizni tanlang',
-    'models.lead': 'Uch xil xarakter — yoʻlsizlik uchun pikap, biznes-klass miniven va shahar uchun yetti oʻrinli krossover.',
+    'models.lead': 'Toʻrt xil xarakter — yetti oʻrinli krossover, yoʻlsizlik va ish uchun 4×4 pikap, biznes va transfer uchun mikroavtobuslar.',
 
     'model.colors': 'Kuzov rangi',
     'model.features': 'Asosiy jihozlar',
@@ -261,10 +273,12 @@ window.I18N = {
     'model.spin': '360° aylantirish uchun torting',
     'model.disclaimer': 'Xususiyatlar va jihozlar maʼlumot uchun keltirilgan va farq qilishi mumkin. Menejerdan aniqlang.',
 
-    't9.title': 'JAC T9 — yoʻl tanlamaydigan pikap',
-    't9.text': 'Toʻliq yuritmali (4×4) ramali pikap: 252 ot kuchiga ega 2.0 litrli turbodvigatel va 8 pogʻonali avtomat. 230 mm yoʻl tirqishi, 1520×1590×470 mm yuk platformasi hamda Apple CarPlay va Android Auto bilan 10,4″ multimedia — ish, sayohat va shahar uchun.',
-    'rf8.title': 'JAC RF8 — butun oila uchun biznes-klass',
-    'rf8.text': 'Yetti oʻrinli miniven: 252 ot kuchiga ega 2.0 litrli turbodvigatel va 8 pogʻonali avtomat. Ikkita elektr surilma eshik, qoʻsh lyuk, 12,3″ dan ikkita ekran, 360° kamera va L2 darajali ADAS yordamchilari.',
+    't8.title': 'JAC T8 — ish va sarguzashtlar uchun pikap',
+    't8.text': 'Ikki qatorli kabinali va toʻliq yuritmali (4×4) ramali pikap. 2.0 litrli turbodvigatel, 6 pogʻonali mexanika, 220 mm yoʻl tirqishi, kuzov himoya yoyi, zinapoyalar va charm salon — qurilish, fermerlik, uzoq safarlar va shahar uchun.',
+    'm4.title': 'JAC M4 — biznes va transfer uchun mikroavtobus',
+    'm4.text': 'Benzinli 2.0 litrli dvigatel va mexanik uzatmalar qutisiga ega keng 9 oʻrinli mikroavtobus. Surilma yon eshik, tonirovkali oynalar, konditsioner va bosh tayanchli qulay kreslolar — korporativ tashish, transfer, turizm va katta oila uchun.',
+    'm3.title': 'JAC M3 — biznes va oila uchun ishonchli miniven',
+    'm3.text': '1.8 litrli benzinli dvigatel (133 o.k.) va 5 pogʻonali mexanikaga ega tejamkor 9 oʻrinli miniven. Surilma eshik, konditsioner, elektr oyna koʻtargichlar va 100 km ga taxminan 8,5 l sarf — taksi, transfer, xodimlarni tashish va oilaviy safarlar uchun.',
     'js8.title': 'JAC JS8 — yetti oʻrindiq, murosasiz',
     'js8.text': 'Yetti oʻrinli krossover: 180 ot kuchiga ega 1.5 litrli turbodvigatel va 7 pogʻonali DCT robot. Panoramali tom, 12,3″ dan ikkita panel, 360° aylanma koʻrinish kamerasi, aqlli LED faralar va 19 dyuymli disklar.',
 

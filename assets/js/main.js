@@ -30,7 +30,7 @@
   function getModel(id) { for (var i = 0; i < MODELS.length; i++) if (MODELS[i].id === id) return MODELS[i]; return MODELS[0]; }
 
   // Текущий язык: ?lang=uz в адресе → сохранённый выбор → русский
-  // Какая это страница: 'home' (главная) или id модели ('t9', 'rf8', 'js8') — атрибут data-page у <html>
+  // Какая это страница: 'home' (главная) или id модели ('js8', 't8', 'm4', 'm3') — атрибут data-page у <html>
   var PAGE = root.getAttribute('data-page') || 'home';
   var params = new URLSearchParams(location.search);
   var lang = (params.get('lang') || store('jac_lang') || 'ru').toLowerCase();
@@ -50,8 +50,9 @@
   function money(n) { return fmt(n) + ' ' + bk('currency'); }
   /** «от 313 950 000 сум» / «313 950 000 soʻmdan» — шаблон в i18n.js (ключ price.from) */
   function fromPriceText(n) { return t('price.from').split('{p}').map(esc).join('<b>' + fmt(n) + '</b>'); }
-  function fromPrice(n) { return '<span class="js-from" data-p="' + n + '">' + fromPriceText(n) + '</span>'; }
-  function minPrice(m) { var p = Infinity; m.trims.forEach(function (tr) { p = Math.min(p, tr.special || tr.retail); }); return p; }
+  // Если цены нет (retail: null в config.js) — показываем «Цена по запросу»
+  function fromPrice(n) { return n ? '<span class="js-from" data-p="' + n + '">' + fromPriceText(n) + '</span>' : bk('price.request'); }
+  function minPrice(m) { var p = Infinity; m.trims.forEach(function (tr) { var v = tr.special || tr.retail; if (v) p = Math.min(p, v); }); return p === Infinity ? 0 : p; }
 
   function applyLang(newLang) {
     lang = newLang;
@@ -114,7 +115,7 @@
   /* ======================================================================
      4. КАРТОЧКИ «МОДЕЛЬНЫЙ РЯД»
      ====================================================================== */
-  /** Адрес отдельной страницы модели: t9.html, rf8.html, js8.html */
+  /** Адрес отдельной страницы модели: js8.html, t8.html, m4.html, m3.html */
   function modelUrl(m) { return m.id + '.html'; }
   function renderCards() {
     var host = $('#modelCards'); if (!host) return;
@@ -140,7 +141,7 @@
   /* ======================================================================
      5. БЛОКИ МОДЕЛЕЙ (цена, цвета, цифры, оснащение, характеристики, галерея)
      ====================================================================== */
-  var selectedColor = {}; // { t9: 0, rf8: 0, js8: 0 } — индекс выбранного цвета
+  var selectedColor = {}; // { js8: 0, t8: 0, … } — индекс выбранного цвета
   var FEATURE_ICON = '<svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>';
 
   function priceBoxHTML(m, trimIdx) {
@@ -148,7 +149,9 @@
     var trimChips = m.trims.length > 1 ? '<div class="chips" data-trims>' + m.trims.map(function (x, i) {
       return '<button type="button" class="chip" aria-pressed="' + (i === (trimIdx || 0)) + '" data-trim="' + i + '">' + esc(x.name) + '</button>';
     }).join('') + '</div>' : '';
-    var priceHTML = tr.special
+    var priceHTML = !tr.retail && !tr.special
+      ? '<div class="price-box__row"><span class="price-box__label">' + bk('model.price') + '</span><b class="price-box__new price-box__new--request">' + bk('price.request') + '</b></div>'
+      : tr.special
       ? '<div class="price-box__row"><span class="price-box__label">' + bk('model.price') + '</span><span class="price-box__old">' + money(tr.retail) + '</span></div>' +
         '<div class="price-box__row"><span class="price-box__label">' + bk('model.special') + '</span><b class="price-box__new">' + fmt(tr.special) + ' <small>' + bk('currency') + '</small></b>' +
         '<span class="price-box__badge">' + bk('model.special.note') + '</span>' +
@@ -513,7 +516,7 @@
   /**
    * ОТПРАВКА ЗАЯВКИ В CRM (формат как на других сайтах ASTER).
    * Пример тела запроса:
-   * {"fio":"Shaxzod","phone":"+998 (97) 521 32 32","comment":"","marka":"jac","model":"T9",
+   * {"fio":"Shaxzod","phone":"+998 (97) 521 32 32","comment":"","marka":"jac","model":"T8",
    *  "website":"jac-aster.uz","city":"samarqand","language":"UZ","utm_source":"instagram", ...}
    */
   function sendLead(payload) {
@@ -749,8 +752,8 @@
       return {
         '@type': 'Car', name: m.name + ' ' + tr.name, brand: { '@type': 'Brand', name: 'JAC' }, model: m.apiModel,
         bodyType: m.bodyType.ru, image: SITE.siteUrl + '/' + m.hero.src, url: SITE.siteUrl + '/' + modelUrl(m),
-        offers: { '@type': 'Offer', priceCurrency: 'UZS', price: tr.special || tr.retail, availability: 'https://schema.org/InStock',
-          seller: { '@id': SITE.siteUrl + '/#dealer' }, url: SITE.siteUrl + '/' + modelUrl(m) }
+        offers: (tr.special || tr.retail) ? { '@type': 'Offer', priceCurrency: 'UZS', price: tr.special || tr.retail, availability: 'https://schema.org/InStock',
+          seller: { '@id': SITE.siteUrl + '/#dealer' }, url: SITE.siteUrl + '/' + modelUrl(m) } : undefined
       };
     });
     var s = doc.createElement('script'); s.type = 'application/ld+json';
