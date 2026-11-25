@@ -10,9 +10,9 @@
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image><image:loc>https://jac-aster.uz/assets/img/t9/hero.webp</image:loc><image:title>JAC T9</image:title></image:image>
-    <image:image><image:loc>https://jac-aster.uz/assets/img/rf8/hero.webp</image:loc><image:title>JAC RF8</image:title></image:image>
-    <image:image><image:loc>https://jac-aster.uz/assets/img/js8/hero.webp</image:loc><image:title>JAC JS8</image:title></image:image>
+    <image:image><image:loc>https://jac-aster.uz/assets/img/t9/a1.webp</image:loc><image:title>JAC T9</image:title></image:image>
+    <image:image><image:loc>https://jac-aster.uz/assets/img/rf8/a1.webp</image:loc><image:title>JAC RF8</image:title></image:image>
+    <image:image><image:loc>https://jac-aster.uz/assets/img/js8/a1.webp</image:loc><image:title>JAC JS8</image:title></image:image>
   </url>
   <url>
     <loc>https://jac-aster.uz/?lang=uz</loc>
@@ -29,7 +29,7 @@
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <image:image><image:loc>https://jac-aster.uz/assets/img/t9/hero.webp</image:loc><image:title>JAC T9</image:title></image:image>
+    <image:image><image:loc>https://jac-aster.uz/assets/img/t9/a1.webp</image:loc><image:title>JAC T9</image:title></image:image>
   </url>
   <url>
     <loc>https://jac-aster.uz/rf8.html</loc>
@@ -38,7 +38,7 @@
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <image:image><image:loc>https://jac-aster.uz/assets/img/rf8/hero.webp</image:loc><image:title>JAC RF8</image:title></image:image>
+    <image:image><image:loc>https://jac-aster.uz/assets/img/rf8/a1.webp</image:loc><image:title>JAC RF8</image:title></image:image>
   </url>
   <url>
     <loc>https://jac-aster.uz/js8.html</loc>
@@ -47,7 +47,7 @@
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <image:image><image:loc>https://jac-aster.uz/assets/img/js8/hero.webp</image:loc><image:title>JAC JS8</image:title></image:image>
+    <image:image><image:loc>https://jac-aster.uz/assets/img/js8/a1.webp</image:loc><image:title>JAC JS8</image:title></image:image>
   </url>
   <url>
     <loc>https://jac-aster.uz/privacy.html</loc>

@@ -11,7 +11,7 @@
    ПРАВИЛА:
    • Тексты на двух языках пишутся так:  { ru: 'Текст', uz: 'Matn' }
    • Цены пишутся числом БЕЗ пробелов:   444675000
-   • Пути к фото — относительно корня сайта: 'assets/img/t9/hero.webp'
+   • Пути к фото — относительно корня сайта: 'assets/img/t9/a1.webp'
    • После правок просто обновите страницу (Ctrl+F5).
    ========================================================================== */
 
@@ -137,17 +137,15 @@ window.MODELS = [
 
     /* --- ФОТОГРАФИИ ---
        hero — главное фото (слайдер). src — большое, srcMobile — для телефонов */
-    hero: { src: 'assets/img/t9/hero.webp', srcMobile: 'assets/img/t9/hero-800.webp', pos: '50% 45%' },
+    hero: { src: 'assets/img/t9/a1.webp', srcMobile: 'assets/img/t9/a1-m.webp', pos: '38% 55%' },
     // Фото в карточке «Модельный ряд». cardPos — какую часть фото показывать (X% Y%)
-    card: 'assets/img/t9/dust.webp', cardPos: '50% 60%',
+    card: 'assets/img/t9/a3.webp', cardPos: '50% 55%',
     gallery: [
-      { src: 'assets/img/t9/dust.webp',     thumb: 'assets/img/t9/dust-800.webp',     alt: { ru: 'JAC T9 в пустыне', uz: 'JAC T9 choʻlda' } },
-      { src: 'assets/img/t9/red.webp',      thumb: 'assets/img/t9/red-800.webp',      alt: { ru: 'Красный JAC T9 на горной дороге', uz: 'Togʻ yoʻlidagi qizil JAC T9' } },
-      { src: 'assets/img/t9/slope.webp',    thumb: 'assets/img/t9/slope-800.webp',    alt: { ru: 'JAC T9 преодолевает крутой подъём', uz: 'JAC T9 tik qiyalikni yengmoqda' } },
-      { src: 'assets/img/t9/beach.webp',    thumb: 'assets/img/t9/beach-800.webp',    alt: { ru: 'JAC T9 у воды', uz: 'Suv boʻyidagi JAC T9' } },
-      { src: 'assets/img/t9/lineup.webp',   thumb: 'assets/img/t9/lineup-800.webp',   alt: { ru: 'Пикапы JAC T9', uz: 'JAC T9 pikaplari' } },
-      { src: 'assets/img/t9/interior.webp', thumb: 'assets/img/t9/interior-800.webp', alt: { ru: 'Салон JAC T9', uz: 'JAC T9 saloni' } },
-      { src: 'assets/img/t9/hero.webp',     thumb: 'assets/img/t9/hero-800.webp',     alt: { ru: 'JAC T9 преодолевает брод', uz: 'JAC T9 suvdan kechib oʻtmoqda' } }
+      { src: 'assets/img/t9/a1.webp', thumb: 'assets/img/t9/a1-800.webp', alt: { ru: 'JAC T9 в горах', uz: 'Togʻlardagi JAC T9' } },
+      { src: 'assets/img/t9/a2.webp', thumb: 'assets/img/t9/a2-800.webp', alt: { ru: 'JAC T9 в прыжке на дюнах', uz: 'Qum barxanlarida sakrayotgan JAC T9' } },
+      { src: 'assets/img/t9/a3.webp', thumb: 'assets/img/t9/a3-800.webp', alt: { ru: 'JAC T9 преодолевает горную реку', uz: 'JAC T9 togʻ daryosidan oʻtmoqda' } },
+      { src: 'assets/img/t9/a4.webp', thumb: 'assets/img/t9/a4-800.webp', alt: { ru: 'JAC T9 на дороге в степи на закате', uz: 'Quyosh botishida dashtdagi JAC T9' } },
+      { src: 'assets/img/t9/interior.webp', thumb: 'assets/img/t9/interior-800.webp', alt: { ru: 'Салон JAC T9', uz: 'JAC T9 saloni' } }
     ]
   },
 
@@ -216,16 +214,16 @@ window.MODELS = [
       { name: { ru: 'Чернильно-синий', uz: 'Siyohrang koʻk' },  hex: '#1c2a4b', img: 'assets/img/rf8/c-blue.webp' }
     ],
 
-    hero: { src: 'assets/img/rf8/hero.webp', srcMobile: 'assets/img/rf8/hero-800.webp', pos: '68% 50%' },
-    card: 'assets/img/rf8/front.webp', cardPos: '50% 62%',
+    hero: { src: 'assets/img/rf8/a1.webp', srcMobile: 'assets/img/rf8/a1-m.webp', pos: '45% 60%' },
+    card: 'assets/img/rf8/a2.webp', cardPos: '40% 65%',
     gallery: [
-      { src: 'assets/img/rf8/front.webp',    thumb: 'assets/img/rf8/front-800.webp',    alt: { ru: 'JAC RF8 спереди', uz: 'JAC RF8 old tomondan' } },
-      { src: 'assets/img/rf8/family.webp',   thumb: 'assets/img/rf8/family-800.webp',   alt: { ru: 'Семья и JAC RF8', uz: 'Oila va JAC RF8' } },
-      { src: 'assets/img/rf8/road.webp',     thumb: 'assets/img/rf8/road-800.webp',     alt: { ru: 'JAC RF8 на горной дороге', uz: 'Togʻ yoʻlidagi JAC RF8' } },
-      { src: 'assets/img/rf8/seats.webp',    thumb: 'assets/img/rf8/seats-800.webp',    alt: { ru: 'Кресла второго ряда JAC RF8', uz: 'JAC RF8 ikkinchi qator kreslolari' } },
+      { src: 'assets/img/rf8/a1.webp', thumb: 'assets/img/rf8/a1-800.webp', alt: { ru: 'JAC RF8 на ночном проспекте', uz: 'Tungi shohkoʻchadagi JAC RF8' } },
+      { src: 'assets/img/rf8/a2.webp', thumb: 'assets/img/rf8/a2-800.webp', alt: { ru: 'JAC RF8 у входа в отель', uz: 'Mehmonxona kirishidagi JAC RF8' } },
+      { src: 'assets/img/rf8/a3.webp', thumb: 'assets/img/rf8/a3-800.webp', alt: { ru: 'Водитель открывает дверь JAC RF8 бизнесмену', uz: 'Haydovchi JAC RF8 eshigini ochmoqda' } },
+      { src: 'assets/img/rf8/a4.webp', thumb: 'assets/img/rf8/a4-800.webp', alt: { ru: 'JAC RF8 на трассе', uz: 'Trassadagi JAC RF8' } },
+      { src: 'assets/img/rf8/seats.webp', thumb: 'assets/img/rf8/seats-800.webp', alt: { ru: 'Кресла второго ряда JAC RF8', uz: 'JAC RF8 ikkinchi qator kreslolari' } },
       { src: 'assets/img/rf8/interior.webp', thumb: 'assets/img/rf8/interior-800.webp', alt: { ru: 'Место водителя JAC RF8', uz: 'JAC RF8 haydovchi oʻrni' } },
-      { src: 'assets/img/rf8/kids.webp',     thumb: 'assets/img/rf8/kids-800.webp',     alt: { ru: 'Просторный салон JAC RF8', uz: 'JAC RF8 keng saloni' } },
-      { src: 'assets/img/rf8/white.webp',    thumb: 'assets/img/rf8/white-800.webp',    alt: { ru: 'Белый JAC RF8', uz: 'Oq JAC RF8' } }
+      { src: 'assets/img/rf8/kids.webp', thumb: 'assets/img/rf8/kids-800.webp', alt: { ru: 'Просторный салон JAC RF8', uz: 'JAC RF8 keng saloni' } }
     ]
   },
 
@@ -296,14 +294,14 @@ window.MODELS = [
       { name: { ru: 'Чёрный', uz: 'Qora' },  hex: '#141414', img: 'assets/img/js8/c-black.webp', sprite: 'assets/img/js8/360-black.webp' }
     ],
 
-    hero: { src: 'assets/img/js8/hero.webp', srcMobile: 'assets/img/js8/hero-800.webp', pos: '58% 60%' },
-    card: 'assets/img/js8/night.webp', cardPos: '55% 65%',
+    hero: { src: 'assets/img/js8/a1.webp', srcMobile: 'assets/img/js8/a1-m.webp', pos: '55% 60%' },
+    card: 'assets/img/js8/a2.webp', cardPos: '70% 65%',
     gallery: [
-      { src: 'assets/img/js8/hero.webp',      thumb: 'assets/img/js8/hero-800.webp',      alt: { ru: 'Белый JAC JS8', uz: 'Oq JAC JS8' } },
-      { src: 'assets/img/js8/night.webp',     thumb: 'assets/img/js8/night-800.webp',     alt: { ru: 'JAC JS8 вечером', uz: 'Kechki JAC JS8' } },
-      { src: 'assets/img/js8/tall.webp',      thumb: 'assets/img/js8/tall-800.webp',      alt: { ru: 'JAC JS8 в городе', uz: 'Shahardagi JAC JS8' } },
-      { src: 'assets/img/js8/roof.webp',      thumb: 'assets/img/js8/roof-800.webp',      alt: { ru: 'Панорамная крыша JAC JS8', uz: 'JAC JS8 panoramali tomi' } },
-      { src: 'assets/img/js8/interior.webp',  thumb: 'assets/img/js8/interior-800.webp',  alt: { ru: 'Передние кресла JAC JS8', uz: 'JAC JS8 old kreslolari' } },
+      { src: 'assets/img/js8/a1.webp', thumb: 'assets/img/js8/a1-800.webp', alt: { ru: 'JAC JS8 на грунтовой дороге', uz: 'Tuproq yoʻldagi JAC JS8' } },
+      { src: 'assets/img/js8/a2.webp', thumb: 'assets/img/js8/a2-800.webp', alt: { ru: 'JAC JS8 на горном серпантине', uz: 'Togʻ serpantinidagi JAC JS8' } },
+      { src: 'assets/img/js8/a3.webp', thumb: 'assets/img/js8/a3-800.webp', alt: { ru: 'JAC JS8 в ночном городе', uz: 'Tungi shahardagi JAC JS8' } },
+      { src: 'assets/img/js8/roof.webp', thumb: 'assets/img/js8/roof-800.webp', alt: { ru: 'Панорамная крыша JAC JS8', uz: 'JAC JS8 panoramali tomi' } },
+      { src: 'assets/img/js8/interior.webp', thumb: 'assets/img/js8/interior-800.webp', alt: { ru: 'Передние кресла JAC JS8', uz: 'JAC JS8 old kreslolari' } },
       { src: 'assets/img/js8/interior2.webp', thumb: 'assets/img/js8/interior2-800.webp', alt: { ru: 'Салон JAC JS8 на 7 мест', uz: 'JAC JS8 ning 7 oʻrinli saloni' } }
     ]
   }
