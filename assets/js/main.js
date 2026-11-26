@@ -506,13 +506,12 @@
 
   function validate(form) {
     var ok = true, uid = form.getAttribute('data-uid');
-    var name = form.elements.fio, phone = form.elements.phone, agree = form.elements.agree;
-    var nameOk = name.value.trim().replace(/[^A-Za-zА-Яа-яЁёЎўҚқҒғҲҳʻʼ'`‘’\s-]/g, '').length >= 2;
-    name.closest('.field').classList.toggle('is-invalid', !nameOk);
+    // В форме только телефон и согласие (имя и комментарий убраны, чтобы заявку было быстрее отправить)
+    var phone = form.elements.phone, agree = form.elements.agree;
     var phoneOk = phoneDigits(phone.value).length === 9;
     phone.closest('.field').classList.toggle('is-invalid', !phoneOk);
     form.classList.toggle('agree-invalid', !agree.checked);
-    ok = nameOk && phoneOk && agree.checked;
+    ok = phoneOk && agree.checked;
     if (!ok) { var first = $('.is-invalid .field__input', form); if (first) first.focus(); }
     return ok;
   }
@@ -554,14 +553,14 @@
     var type = form.getAttribute('data-type') || 'booking';
     // Модель может быть не выбрана (общая заявка с главной) — тогда поле model пустое
     var m = null; MODELS.forEach(function (x) { if (x.id === modelId) m = x; });
-    var userComment = form.elements.comment.value.trim();
+    var userComment = form.elements.comment ? form.elements.comment.value.trim() : '';
     var comment = m
       ? [TYPE_LABEL_RU[type] || type, m.name + ' ' + m.trims[0].name, 'Цвет: ' + m.colors[selectedColor[m.id] || 0].name.ru, userComment]
       : [TYPE_LABEL_RU[type] || type, 'Модель не выбрана', userComment];
     comment = comment.filter(Boolean).join(' | ');
 
     var payload = {
-      fio: form.elements.fio.value.trim(),
+      fio: form.elements.fio ? form.elements.fio.value.trim() : (lang === 'uz' ? 'Saytdan mijoz' : 'Клиент с сайта'),  // имени в форме нет — CRM получает подпись
       phone: phoneFormat(phoneDigits(form.elements.phone.value)),
       comment: comment,
       marka: SITE.api.marka,
@@ -637,7 +636,7 @@
       setModalImage(modelId);
       closeMenu();
       openDialog($('#bookingModal'));
-      setTimeout(function () { var f = modalForm.elements.fio; if (f && window.innerWidth > 1023) f.focus(); }, 350);
+      setTimeout(function () { var f = modalForm.elements.phone; if (f && window.innerWidth > 1023) f.focus(); }, 350);
     });
   }
 
