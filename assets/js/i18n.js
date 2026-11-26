@@ -191,7 +191,7 @@ window.I18N = {
     'footer.up': 'Наверх',
 
     /* --- Мобильная панель и прочее --- */
-    'bar.call': 'Звонок',
+    'bar.call': 'Позвонить',
     'bar.tg': 'Telegram',
     'bar.book': 'Бронь',
     'lightbox.close': 'Закрыть',
@@ -366,7 +366,7 @@ window.I18N = {
     'footer.offer': 'Saytdagi maʼlumotlar maʼlumotnoma xarakteriga ega va ommaviy oferta hisoblanmaydi.',
     'footer.up': 'Yuqoriga',
 
-    'bar.call': 'Qoʻngʻiroq',
+    'bar.call': 'Qoʻngʻiroq qilish',
     'bar.tg': 'Telegram',
     'bar.book': 'Bron',
     'lightbox.close': 'Yopish',
