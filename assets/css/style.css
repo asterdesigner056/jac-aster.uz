@@ -214,6 +214,10 @@ body:not(.is-loading) .preloader { opacity: 0; visibility: hidden; }
 .hero__line { display: block; animation: heroTitle 1.3s var(--ease-out) .5s both; }
 @keyframes heroTitle { from { opacity: 0; transform: translateY(60px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: none; clip-path: inset(0 0 -20% 0); } }
 .hero { position: relative; height: 100svh; min-height: 600px; max-height: 1100px; overflow: hidden; background: #000; }
+/* Телефон: на главном фото четыре машины в ряд — высота экрана подогнана под фото, чтобы крайние машины не обрезались */
+@media (max-width: 800px) {
+  .hero:not(.hero--model) { height: min(100svh, 177vw); min-height: 560px; }
+}
 
 
 /* ---------- 9. СЕКЦИИ (общие) ---------- */
