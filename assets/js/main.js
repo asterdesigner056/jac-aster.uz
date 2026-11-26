@@ -506,12 +506,14 @@
 
   function validate(form) {
     var ok = true, uid = form.getAttribute('data-uid');
-    // В форме только телефон и согласие (имя и комментарий убраны, чтобы заявку было быстрее отправить)
-    var phone = form.elements.phone, agree = form.elements.agree;
+    // В форме имя, телефон и согласие (поле комментария убрано, чтобы заявку было быстрее отправить)
+    var name = form.elements.fio, phone = form.elements.phone, agree = form.elements.agree;
+    var nameOk = name.value.trim().replace(/[^A-Za-zА-Яа-яЁёЎўҚқҒғҲҳʻʼ'`‘’\s-]/g, '').length >= 2;
+    name.closest('.field').classList.toggle('is-invalid', !nameOk);
     var phoneOk = phoneDigits(phone.value).length === 9;
     phone.closest('.field').classList.toggle('is-invalid', !phoneOk);
     form.classList.toggle('agree-invalid', !agree.checked);
-    ok = phoneOk && agree.checked;
+    ok = nameOk && phoneOk && agree.checked;
     if (!ok) { var first = $('.is-invalid .field__input', form); if (first) first.focus(); }
     return ok;
   }
@@ -636,7 +638,7 @@
       setModalImage(modelId);
       closeMenu();
       openDialog($('#bookingModal'));
-      setTimeout(function () { var f = modalForm.elements.phone; if (f && window.innerWidth > 1023) f.focus(); }, 350);
+      setTimeout(function () { var f = modalForm.elements.fio; if (f && window.innerWidth > 1023) f.focus(); }, 350);
     });
   }
 
